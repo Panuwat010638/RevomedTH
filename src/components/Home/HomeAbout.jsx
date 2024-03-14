@@ -7,7 +7,7 @@ export default function HomeAbout({data,locale}) {
     <section className='bg-[#F3F5FB]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
             <div className='flex flex-col justify-center items-center w-full h-full gap-y-[32px] lg:gap-y-[40px]'>
-                <div className="flex justify-center items-center gap-x-[24px]">
+                <div className="flex justify-center items-center gap-x-[12px] lg:gap-x-[24px]">
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center'>
                     {'ให้เราเป็น'}
                     </h2>
