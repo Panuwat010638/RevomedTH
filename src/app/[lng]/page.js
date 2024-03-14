@@ -6,6 +6,7 @@ import HomeRevomedWorld from "@/components/Home/HomeRevomedWorld";
 import HomePartner from "@/components/Home/HomePartner";
 import HomeGrow from "@/components/Home/HomeGrow";
 import HomeSlide from "@/components/Home/HomeSlide";
+import HomeBlog from "@/components/Home/HomeBlog";
 
 export const revalidate = 100;
 export const dynamicParams = true;
@@ -29,6 +30,7 @@ export default function Home({ params }) {
       <HomePartner locale={params.lng}/>
       <HomeGrow locale={params.lng}/>
       <HomeSlide locale={params.lng}/>
+      <HomeBlog locale={params.lng}/>
     </main>
   );
 }

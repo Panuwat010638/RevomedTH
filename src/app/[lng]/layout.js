@@ -6,6 +6,8 @@ import groq from 'groq'
 import GA from './ga'
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 
+import Navbar from "@/components/Navbar/Navbar";
+
 const iBM_Plex_Sans_Thai =  IBM_Plex_Sans_Thai(
   { 
     weight: ['400','500','600', '700'],
@@ -65,10 +67,10 @@ export async function generateMetadata({ params, searchParams }, parent) {
   
 
   return {
-    title: 'Vplus Expert Co.,Ltd' ,
-    description: 'Vplus Expert Co.,Ltd',
-    keywords:'Edencolors',
-    metadataBase: new URL('https://www.popperty.net/th'),
+    title: 'Revomed Group Co.,Ltd.' ,
+    description: 'Revomed Group Co.,Ltd.',
+    keywords:'Revomed Group Co.,Ltd.',
+    metadataBase: new URL('https://www.revomed.com/th'),
     alternates: {
       canonical: '/',
       languages: {
@@ -90,9 +92,9 @@ export async function generateMetadata({ params, searchParams }, parent) {
         'max-snippet': -1,
       },
     },
-    authors: [{ name: 'Vplus Expert Co.,Ltd', url: 'https://www.popperty.net/th' }],
-    creator: 'Vplus Expert Co.,Ltd',
-    publisher: 'Vplus Expert Co.,Ltd',
+    authors: [{ name: 'Revomed Group Co.,Ltd.', url: 'https://www.revomed.com/th' }],
+    creator: 'Revomed Group Co.,Ltd.',
+    publisher: 'Revomed Group Co.,Ltd.',
 
     verification: {
       google: gsc?.title,
@@ -120,7 +122,7 @@ export default async function RootLayout({ children,params: { lng } }) {
             src={`https://www.facebook.com/tr?id=${facebook?.title}&ev=PageView&noscript=1`}
           />
         </noscript>
-       
+       <Navbar lang={lng} localeData={locale}/>
         {children}
 
       </body>
