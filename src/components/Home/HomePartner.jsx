@@ -69,9 +69,9 @@ export default function HomePartner({locale}) {
                 </div>
 
                 {/* Coutry */}
-                <div className=" grid grid-cols-2 lg:grid-cols-4 gap-y-[40px] gap-x-[16px] sm:gap-x-[48px] md:gap-y-[56px] xl:gap-x-[89px] w-full sm:w-[80%] md:w-2/3 lg:w-full">
+                <div className="flex flex-wrap gap-y-[40px] gap-x-[3%] md:gap-y-[56px] w-full sm:w-[80%] md:w-2/3 lg:w-full">
                     {data?.map((item,index)=>(
-                        <div key={index} className="flex flex-col w-full h-full gap-y-[16px] lg:gap-y-[24px]">
+                        <div key={index} className="flex flex-col w-[48.5%] lg:w-[22.75%] h-full gap-y-[16px] lg:gap-y-[24px]">
                             <h3 className='font-line text-[18px] lg:text-[24px] text-[#0A2B40] font-[700] leading-[150%]'>
                                 {item?.title}
                             </h3>

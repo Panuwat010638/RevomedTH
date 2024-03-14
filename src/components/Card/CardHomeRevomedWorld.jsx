@@ -11,7 +11,7 @@ function urlFor(source) {
 
 export default function CardHomeRevomedWorld({item,index}) {
   return (
-    <div key={index} className="flex flex-col items-center w-full h-full gap-[16px] lg:gap-[24px]">
+    <div key={index} className="flex flex-col items-center w-[49%] sm:w-[32%] lg:w-[15%] h-full gap-[16px] lg:gap-[24px]">
         <div className="flex justify-center items-center w-[80px] h-[80px]">
             <Image className="object-cover object-center z-0" 
             classNames={{img:" object-cover w-full h-full z-0",wrapper:" object-cover z-0"}}

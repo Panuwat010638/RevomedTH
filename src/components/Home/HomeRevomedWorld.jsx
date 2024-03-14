@@ -28,7 +28,7 @@ export default function HomeRevomedWorld({locale}) {
                 </h2>
                
                 
-                <div className=" grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 w-full gap-y-[16px] md:gap-y-[24px] gap-x-[16px] md:gap-x-[24px]">
+                <div className="flex flex-wrap w-full gap-y-[16px] md:gap-y-[24px] gap-x-[2%]">
                     {data?.slice(0,6)?.map((item,index)=>(
                         <CardHomeRevomedWorld key={index} item={item} index={index}/>
                     ))}
