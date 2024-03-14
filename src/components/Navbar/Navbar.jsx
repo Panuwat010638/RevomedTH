@@ -64,7 +64,7 @@ export default function Navbar({lang,localeData}) {
               <div className="flex justify-between items-center w-full h-[80px]">
                 {/* Logo */}
                 <div className='flex items-center lg:w-[39%] h-full z-[110]'>
-                    <Link href="/aesthetic" className='flex justify-center items-center'>
+                    <Link href="/" className='flex justify-center items-center'>
                         <Image className="object-contain object-center w-[136px] h-[41px]" alt={navbar?.logo?.alt} src={navbar?.logo?.image} quality={100} width={136} height={41} />
                     </Link>
                 </div>

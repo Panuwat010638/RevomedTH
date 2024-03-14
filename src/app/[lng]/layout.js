@@ -7,6 +7,7 @@ import GA from './ga'
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 const iBM_Plex_Sans_Thai =  IBM_Plex_Sans_Thai(
   { 
@@ -124,7 +125,7 @@ export default async function RootLayout({ children,params: { lng } }) {
         </noscript>
        <Navbar lang={lng} localeData={locale}/>
         {children}
-
+        <Footer lang={lng} localeData={locale}/>
       </body>
     </html>
   );
