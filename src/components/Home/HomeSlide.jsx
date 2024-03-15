@@ -11,10 +11,7 @@ export default function HomeSlide({locale}) {
         {location:'2023 Singapore',title:'HOFS AWARD ',detail:'OEM/ODM Cosmetic and Supplement Manufacturer Hall of Fame'},
         {location:'2022 Las Vegas, USA',title:'Stevie Awards\nWomen in Business',detail:'สาขา Women of The Year in Manufacturing'},
         {location:'2022',title:'Stevie Awards\nInternational\nBusiness',detail:'สาขา Acheivement in Growth'},
-        {location:'2023 Rome, Italy',title:'Stevie Awards\nInternational\nBusiness Expansion',detail:'สาขา International Business Expansion'},
-        {location:'2023 Singapore',title:'HOFS AWARD ',detail:'OEM/ODM Cosmetic and Supplement Manufacturer Hall of Fame'},
-        {location:'2022 Las Vegas, USA',title:'Stevie Awards\nWomen in Business',detail:'สาขา Women of The Year in Manufacturing'},
-        {location:'2022',title:'Stevie Awards\nInternational\nBusiness',detail:'สาขา Acheivement in Growth'},
+        
     ]
     const [len,setLen]=useState(data?.length)
     const updateActiveIndex = (newIndex) => {

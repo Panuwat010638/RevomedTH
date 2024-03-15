@@ -35,8 +35,8 @@ export default function Footer() {
           ],
         location:"บริษัท รีโว่เมด (ไทยแลนด์) จำกัด เลขที่ 29/11 หมู่ที่ 10\nต.บางบัวทอง อ.บางบัวทอง จ.นนทบุรี 11110",
         social:{
-            line:"#",
-            facebook:"#",
+            line:"https://line.me/ti/p/~@revomed",
+            facebook:"https://www.facebook.com/revomedthailand",
             tel:"061-662-4242",
             email:"revomedthai@gmail.com"
         },
