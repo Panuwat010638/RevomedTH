@@ -30,7 +30,7 @@ export default function Home({ params }) {
       <HomePartner locale={params.lng}/>
       <HomeGrow locale={params.lng}/>
       <HomeSlide locale={params.lng}/>
-    
+      <HomeBlog locale={params.lng}/>
     </main>
   );
 }
