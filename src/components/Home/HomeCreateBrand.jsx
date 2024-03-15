@@ -51,7 +51,7 @@ export default function HomeCreateBrand() {
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {'03'}
                                     </h4>
-                                    <h4 className='font-line text-[16px] xl:text-[20px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
+                                    <h4 className='font-line text-[16px] xl:text-[18px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {'Pioneer in research and innovation'}
                                     </h4>
                                 </div>
@@ -59,7 +59,7 @@ export default function HomeCreateBrand() {
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line '>
                                         {'04'}
                                     </h4>
-                                    <h4 className='font-line text-[16px] xl:text-[20px] text-[#5E73B2] font-[700] whitespace-pre-line'>
+                                    <h4 className='font-line text-[16px] xl:text-[18px] text-[#5E73B2] font-[700] whitespace-pre-line'>
                                         {'Marketing Service and Digital Platform'}
                                     </h4>
                                 </div>
@@ -71,7 +71,7 @@ export default function HomeCreateBrand() {
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line'>
                                         {'05'}
                                     </h4>
-                                    <h4 className='font-line text-[16px]  xl:text-[20px] text-[#5E73B2] font-[700] whitespace-pre-line'>
+                                    <h4 className='font-line text-[16px]  xl:text-[18px] text-[#5E73B2] font-[700] whitespace-pre-line'>
                                         {'Pioneer in research and innovation'}
                                     </h4>
                                 </div>
@@ -79,7 +79,7 @@ export default function HomeCreateBrand() {
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {'06'}
                                     </h4>
-                                    <h4 className='font-line text-[16px] xl:text-[20px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
+                                    <h4 className='font-line text-[16px] xl:text-[18px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {'Specialized Technology'}
                                     </h4>
                                 </div>

@@ -36,7 +36,7 @@ export default function HomeGrow({locale}) {
                     </h2>
                 </div>
 
-                <div className="flex flex-col md:flex-row w-full md:justify-between md:gap-x-[10%] xl:gap-x-[15%] gap-y-[72px]">
+                <div className="flex flex-col-reverse md:flex-row w-full md:justify-between md:gap-x-[10%] xl:gap-x-[15%] gap-y-[72px]">
                     {data?.map((item,index)=>(
                         <div key={index} className="flex flex-row-reverse items-center md:items-start md:flex-col w-full md:w-[26.67%] xl:w-[23.3%] gap-[40px] z-[10]">
                             <div className="flex flex-col w-[80%] md:w-full gap-y-[16px]">

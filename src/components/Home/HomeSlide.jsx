@@ -138,21 +138,21 @@ export default function HomeSlide({locale}) {
                 </div>
 
                 <div className="hidden lg:flex justify-center items-end w-full lg:h-full">
-                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[4px] sm:gap-x-[6px] md:gap-x-[8px]">
+                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[8px]">
                       {data?.slice(0,len-3).map((item,index)=>(
                         <div key={index} onClick={()=>setActiveIndex(index)} className={`flex w-[12px] h-[12px]  rounded-full cursor-pointer ${activeIndex == index ? "bg-[#FDAEB8]":"bg-[#E0E3EB]"}`}/>
                       ))}
                     </div>
                 </div>
                 <div className="hidden sm:flex lg:hidden justify-center items-end w-full lg:h-full">
-                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[4px] sm:gap-x-[6px] md:gap-x-[8px]">
+                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[8px]">
                       {data?.slice(0,(len/2)+(len%2)).map((item,index)=>(
                         <div key={index} onClick={()=>setActiveIndex2(index)} className={`flex w-[12px] h-[12px]  rounded-full cursor-pointer ${activeIndex2 == index ? "bg-[#FDAEB8]":"bg-[#E0E3EB]"}`}/>
                       ))}
                     </div>
                 </div>
                 <div className="flex sm:hidden justify-center items-end w-full lg:h-full">
-                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[4px] sm:gap-x-[6px] md:gap-x-[8px]">
+                    <div className="flex justify-center items-center xl:pb-[40px] gap-x-[8px]">
                       {data?.slice(0,len).map((item,index)=>(
                         <div key={index} onClick={()=>setActiveIndex3(index)} className={`flex w-[12px] h-[12px]  rounded-full cursor-pointer ${activeIndex3 == index ? "bg-[#FDAEB8]":"bg-[#E0E3EB]"}`}/>
                       ))}
