@@ -12,6 +12,7 @@ export default function HomeSlide({locale}) {
         {location:'2022 Las Vegas, USA',title:'Stevie Awards\nWomen in Business',detail:'สาขา Women of The Year in Manufacturing'},
         {location:'2022',title:'Stevie Awards\nInternational\nBusiness',detail:'สาขา Acheivement in Growth'},
         
+        
     ]
     const [len,setLen]=useState(data?.length)
     const updateActiveIndex = (newIndex) => {
@@ -134,7 +135,7 @@ export default function HomeSlide({locale}) {
                     ))}
                 </div>
 
-                <div className="hidden lg:flex justify-center items-end w-full lg:h-full">
+                <div className={`${len == 4 ? "lg:hidden":"lg:flex"} hidden justify-center items-end w-full lg:h-full`}>
                     <div className="flex justify-center items-center xl:pb-[40px] gap-x-[8px]">
                       {data?.slice(0,len-3).map((item,index)=>(
                         <div key={index} onClick={()=>setActiveIndex(index)} className={`flex w-[12px] h-[12px]  rounded-full cursor-pointer ${activeIndex == index ? "bg-[#FDAEB8]":"bg-[#E0E3EB]"}`}/>
