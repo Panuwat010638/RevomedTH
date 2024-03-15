@@ -72,7 +72,7 @@ export default function HomeCreateBrand() {
                                         {'05'}
                                     </h4>
                                     <h4 className='font-line text-[16px]  xl:text-[18px] text-[#5E73B2] font-[700] whitespace-pre-line'>
-                                        {'Pioneer in research and innovation'}
+                                        {'Knowledge & Professional Staff'}
                                     </h4>
                                 </div>
                                 <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 md:p-6'>
