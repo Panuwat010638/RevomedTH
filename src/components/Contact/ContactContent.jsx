@@ -11,10 +11,39 @@ export default function ContactContent({data}) {
     const [product, setProduct] = useState('');
     const [message,setMessage]=useState('')
 
+    const [confirm,setConfirm]= useState(false)
+    const sendMail = async (e) => {
+        e.preventDefault();
+        if(confirm==true){
+            console.log('Foam Click ส่งEmail')
+        }else {
+            console.log('Foam NO Click ส่งEmail')
+        }
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            email,product,name,tel,message
+      
+          })
+          
+        })
+        
+        setName('');
+        setProduct('')
+        setTel('');
+        setEmail('');
+        setMessage('');
+        setConfirm(false)
+   
+      }
+
 
     //Select Product
     const handleSelectionChangeProduct = (e) => {
-        setValue(e.target.value);
+        setProduct(e.target.value);
       };
   return (
     <section className='bg-[#fcfcfc]'>
@@ -31,7 +60,7 @@ export default function ContactContent({data}) {
                         </p>
                     </div>
                     {/* Form Contact */}
-                    <form className='flex flex-col w-full gap-y-[16px] lg:gap-y-[24px]'>
+                    <form onSubmit={sendMail} className='flex flex-col w-full gap-y-[16px] lg:gap-y-[24px]'>
                         <div className="flex flex-col w-full gap-y-[16px] lg:gap-y-[24px]">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
                                 <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]"}}
@@ -72,7 +101,7 @@ export default function ContactContent({data}) {
                                 classNames={{base:"rounded-[8px]",innerWrapper:"w-full h-[190px] py-[12px] bg-[#F3F5FB]",inputWrapper:"bg-[#F3F5FB] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]"}}
                             />
                         </div>
-                        <ButtonForm text={data?.input?.button}/>
+                        <ButtonForm type='submit' text={data?.input?.button}/>
                     </form>
                 </div>
 
