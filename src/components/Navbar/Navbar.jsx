@@ -57,7 +57,7 @@ export default function Navbar({lang,localeData}) {
   }
   return (
     <header className="fixed w-screen z-[100]">
-        <nav className={` transition-all duration-500 ${scrolled==false && pathname==`/${lang}` ? "bg-transparent":" bg-[#fcfcfc]"}`}>
+        <nav className={` transition-all duration-500 ${scrolled==false && pathname==`/${lang}` ? "bg-transparent":" bg-[#fcfcfc] drop-shadow-md"}`}>
           <div className="max-w-7xl mx-auto px-6 xl:px-0">
             <div className="flex flex-col justify-between items-center min-w-full h-full">
               {/* Nav Menu */}
