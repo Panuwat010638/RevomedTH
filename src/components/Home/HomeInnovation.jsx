@@ -14,7 +14,7 @@ export default function HomeInnovation({data,locale}) {
                 <p className='font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line text-center'>
                     {'เราคือกลุ่มธุรกิจในระดับสากล โดยมีฐานของกลุ่มธุรกิจตั้งอยู่ที่ประเทศไทยและขยายสู่ระดับสากลสู่ พม่า กัมพูชา จีน นิวซีแลนด์ เวียดนาม\nและมีแผนขยายธุรกิจออกไปอย่างต่อเนื่องให้ครอบคลุมได้มากที่สุด ทั้งผลิตภัณฑ์ดูแลสุขภาพและเครื่องสำอาง\nเช่น ครีมสูตร เครื่องสำอาง และอาหารเสริมภายใต้แบรนด์ของคุณ '}
                 </p>
-                <ButtonBlue text={"เกี่ยวกับเรา"} link={"#"}/>
+                <ButtonBlue text={"เกี่ยวกับเรา"} link={"#"} locale={locale}/>
             </div>
         </div>
     </section>

@@ -12,7 +12,7 @@ export default function CardNews({item,index,locale}) {
   return (
     <div className="flex flex-col w-full md:w-[49%] lg:w-[32%] h-full gap-y-[24px] relative">
         {/* Image */}
-        <div className="flex justify-center items-center w-full md:h-[196px] lg:h-[242px] xl:h-[296px]">
+        <div className="flex justify-center items-center w-full md:h-[196px] lg:h-[242px] xl:h-[296px] rounded-[16px]">
             <Image className="object-cover object-center w-full h-full z-0 rounded-[16px]" 
             classNames={{img:" object-cover w-full h-full z-0 rounded-[16px]",wrapper:" object-cover w-full h-full z-0 rounded-[16px]"}}
             radius="none"
