@@ -20,8 +20,15 @@ async function getPosts(params) {
         const dateB = new Date(b.date);
         return dateB - dateA;
       });
+    const queryBusiness = groq`*[_type == "BusinessUnitContent" && language->title == "${lng}" ] | order(_createdAt asc)`
+    const postsDataBusiness = await client.fetch(queryBusiness)
+    const business = postsDataBusiness.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+      });
     return {
-        props: { posts},revalidate:10
+        props: { posts,business},revalidate:10
     }
   }
   
@@ -41,12 +48,13 @@ async function getPosts(params) {
 export default async function BusinessUnitspage({ params }) {
     const posts = await getPosts(params);
     const data = posts.props.posts;
+    const business = posts.props.business
   return (
     <main>
         <div className="flex w-full h-[80px]"/>
         <BusinessUnitBanner data={data[0]?.banner} locale={params.lng}/>
         <BusinessUnitHeader data={data[0]?.header} locale={params.lng}/>
-        <BusinessUnitContent/>
+        <BusinessUnitContent business={business} locale={params.lng}/>
     </main>
   )
 }
