@@ -6,7 +6,7 @@ export default function ContactHeader({data}) {
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
             <div className='flex flex-col justify-center items-center w-full h-full gap-y-[32px] lg:gap-y-[40px]'>
                 <div className="flex flex-col justify-center items-center gap-y-[32px]">
-                    <div className='flex flex-col justify-center items-center gap-y-[16px]'>
+                    <div className='flex flex-col justify-center items-center gap-y-[8px] lg:gap-y-[16px]'>
                         <h1 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] text-center'>
                             {data?.header}
                         </h1>

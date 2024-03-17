@@ -1,5 +1,5 @@
 'use client'
-import { Image } from "@nextui-org/react"
+import { Image,Link } from "@nextui-org/react"
 import groq from "groq"
 import client from "@/client"
 import imageUrlBuilder from '@sanity/image-url'
@@ -8,9 +8,9 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function CardNews({item,index}) {
+export default function CardNews({item,index,locale}) {
   return (
-    <div className="flex flex-col w-full md:w-[49%] lg:w-[32%] h-full gap-y-[24px]">
+    <div className="flex flex-col w-full md:w-[49%] lg:w-[32%] h-full gap-y-[24px] relative">
         {/* Image */}
         <div className="flex justify-center items-center w-full md:h-[196px] lg:h-[242px] xl:h-[296px]">
             <Image className="object-cover object-center w-full h-full z-0 rounded-[16px]" 
@@ -35,7 +35,8 @@ export default function CardNews({item,index}) {
                 </p>
             </div>
         </div>
-
+        <Link href={`/${locale}/news/${item?.slug?.slug?.current}`} className="flex justify-center items-center w-full h-full absolute top-0 z-[10] rounded-[16px]">
+        </Link>
     </div>
   )
 }

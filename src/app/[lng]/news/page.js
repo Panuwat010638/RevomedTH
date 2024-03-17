@@ -100,7 +100,7 @@ export default async function newspage({ params }) {
         <div className="flex w-full h-[80px]"/>
         <NewsBanner data={data[0]?.banner} locale={params.lng}/>
         <NewsHeader data={data[0]?.header} locale={params.lng}/>
-        <NewsContent news={params.lng == 'th' ? newsTH : params.lng=='en'? newsEN : newsCN} category={params.lng == 'th' ? categoryTH : params.lng=='en'? categoryEN : categoryCN}/>
+        <NewsContent locale={params.lng} news={params.lng == 'th' ? newsTH : params.lng=='en'? newsEN : newsCN} category={params.lng == 'th' ? categoryTH : params.lng=='en'? categoryEN : categoryCN}/>
     </main>
   )
 }
