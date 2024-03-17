@@ -27,7 +27,7 @@ export default function HomeBlog() {
                     <ButtonBlueHeader text={"ดูทั้งหมด"} link={"#"}/>
                 </div>
                 {/* Header */}
-                <div className="flex sm:hidden justify-centerw-full items-center gap-x-[24px]">
+                <div className="flex sm:hidden justify-center w-full items-center gap-x-[24px]">
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center'>
                     {'ข่าวสารของเรา'}
                     </h2>
