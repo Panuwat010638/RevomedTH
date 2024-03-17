@@ -1,6 +1,8 @@
 import CSRBanner from "@/components/CSR/CSRBanner"
 import CSRHeader from "@/components/CSR/CSRHeader"
 import CSRAbout from "@/components/CSR/CSRAbout"
+import CSRRoadmap from "@/components/CSR/CSRRoadmap"
+import CSRNews from "@/components/CSR/CSRNews"
 
 import groq from "groq"
 import client from "@/client"
@@ -17,7 +19,7 @@ async function getPosts(params) {
         const query = groq`*[_type == "CSRPage" && language->title == "${lng}" ] | order(_createdAt desc)`
           const posts = await client.fetch(query)
       
-          const queryBlog = groq`*[_type == "newsTH" && category->title == "โครงการ CSR" ] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsTH" && category->title == "โครงการ CSR" ] | order(_createdAt asc){
             title,
             mainImage,
             slug,
@@ -41,7 +43,7 @@ async function getPosts(params) {
         const query = groq`*[_type == "CSRPage" && language->title == "${lng}" ] | order(_createdAt desc)`
           const posts = await client.fetch(query)
       
-          const queryBlog = groq`*[_type == "newsCN" && category->title == "โครงการ CSR" ] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsCN" && category->title == "โครงการ CSR" ] | order(_createdAt asc){
             title,
             mainImage,
             slug,
@@ -65,7 +67,7 @@ async function getPosts(params) {
         const query = groq`*[_type == "CSRPage" && language->title == "${lng}" ] | order(_createdAt desc)`
           const posts = await client.fetch(query)
       
-          const queryBlog = groq`*[_type == "newsEN" && category->title == "โครงการ CSR" ] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsEN" && category->title == "โครงการ CSR" ] | order(_createdAt asc){
             title,
             mainImage,
             slug,
@@ -112,6 +114,8 @@ export default async function CSRpage({params}) {
         <CSRBanner data={data[0]?.banner} locale={params.lng}/>
         <CSRHeader data={data[0]?.header} locale={params.lng}/>
         <CSRAbout  data={data[0]?.about}  locale={params.lng}/>
+        <CSRRoadmap data={data[0]?.ourroadmap}  locale={params.lng}/>
+        <CSRNews   data={data[0]?.news} news={news} locale={params.lng}/>
     </main>
   )
 }
