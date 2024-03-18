@@ -1,7 +1,6 @@
 'use client'
 import { useState,useEffect } from "react"
-import { useSearchParams } from "next/navigation"
-import { usePathname } from "next/navigation"
+import { useSearchParams,usePathname  } from "next/navigation"
 import {Pagination,Tabs, Tab} from "@nextui-org/react";
 
 import CardNews from "../Card/CardNews"
@@ -34,14 +33,14 @@ export default function NewsContent({news,category,locale}) {
         window.scrollTo({ top: 376});
       }, [currentPage]);
     // Params Quary Category //////////////////////////////////////////////////////////////
-    const qp = router.toString()||'/news'
+    const qp = router.toString()||`/news`
       const text=qp.replace("category=", "");
       const text2=decodeURI(text)
       const textQuery1=text2.replace("+", " ");
       const textQuery=textQuery1.replace("+", " ");
       useEffect(() => {
           setCat(textQuery)
-          if (textQuery !='/news' ) {       
+          if (textQuery !=`/news` ) {       
               setCat(textQuery);
               setCurrentPage(1);
           } else {
