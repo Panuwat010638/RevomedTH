@@ -55,7 +55,7 @@ export default function Navbar({lang,localeData,navbar}) {
               <div className="flex justify-between items-center w-full h-[80px]">
                 {/* Logo */}
                 <div className='flex items-center lg:w-[39%] h-full z-[110]'>
-                    <Link href="/" className='flex justify-center items-center'>
+                    <Link href={`/${lang}`} className='flex justify-center items-center'>
                         <Image className="object-contain object-center w-[136px] h-[41px]" alt={navbar?.logo?.alt} src={urlFor(navbar?.logo?.image).url()} quality={100} width={136} height={41} />
                     </Link>
                 </div>
