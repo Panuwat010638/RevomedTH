@@ -85,7 +85,7 @@ export default function Navbar({lang,localeData,navbar}) {
                           {navbar?.menu?.slice(0,navbar?.menu?.length).map((item,index)=>(
                             <li key={index} onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} className={`${item?.status== true ? "flex":"hidden"} items-center w-full`}>
                                
-                                <Link onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} href={`/${lang}`+item?.href} className={`pl-[32px] xl:pl-[96px] text-[16px] xl:text-[18px] font-[500] leading-[150%] transition-colors duration-500 hover:text-[#BA636F] uppercase ${pathname== `/${lang}${item?.href}` ? "text-[#BA636F]":"text-[#002E62]"}`}>
+                                <Link onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} href={`/${lang}`+item?.href} className={`pl-[32px] xl:pl-[40px] xl:pr-[32px] text-[16px] xl:text-[18px] font-[500] leading-[150%] transition-colors duration-500 hover:text-[#BA636F] uppercase ${pathname== `/${lang}${item?.href}` ? "text-[#BA636F]":"text-[#002E62]"}`}>
                                   {item?.title}
                                 </Link>
                                 

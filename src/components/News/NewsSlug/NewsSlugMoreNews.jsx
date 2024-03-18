@@ -18,9 +18,7 @@ export default function NewsSlugMoreNews({locale,news}) {
                         <CardMoreNews key={`More News`+index} item={item} index={index}/>
                     ))}
                 </div>
-                
-
-            
+                        
             </div>
         </div>
     </section>
