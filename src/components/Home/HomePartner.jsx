@@ -12,24 +12,15 @@ import c07 from "../../../public/assets/Images/Home/coutry/c07.png"
 import circle from "../../../public/assets/Images/Home/circle.png"
 import circle2 from "../../../public/assets/Images/Home/circle2.png"
 
-export default function HomePartner({locale}) {
-    const data =[
-        {title:'ทวีปเอเชีย',partner:[
-            {name:"Cambodia",link:'#',icon:c01,alt:'Cambodia'},
-            {name:"Korea",link:'#',icon:c02,alt:'Korea'},
-            {name:"Japan",link:'#',icon:c03,alt:'Japan'},
-        ]},
-        {title:'ทวีปยุโรป',partner:[
-            {name:"France",link:'#',icon:c04,alt:'France'},
-            {name:"Italy",link:'#',icon:c05,alt:'Italy'},
-        ]},
-        {title:'ทวีปอเมริกา',partner:[
-            {name:"United States",link:'#',icon:c06,alt:'United States'},
-        ]},
-        {title:'หมู่เกาะทางแปซิฟิก',partner:[
-            {name:"Australia",link:'#',icon:c07,alt:'Australia'},
-        ]},
-    ]
+import client from "@/client"
+import imageUrlBuilder from '@sanity/image-url'
+const builder = imageUrlBuilder(client)
+function urlFor(source) {
+  return builder.image(source)
+}
+
+export default function HomePartner({data,locale}) {
+    
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
@@ -49,11 +40,11 @@ export default function HomePartner({locale}) {
                             <path d="M13.7713 18.4097C13.3145 18.3521 12.8768 18.5249 12.5723 18.8321L13.4096 19.3889L2.80872 18.0257C2.71356 17.4113 2.23776 16.9121 1.59066 16.8353C0.829374 16.7393 0.125178 17.2769 0.0109852 18.0641C-0.0841758 18.8321 0.448725 19.5425 1.22905 19.6577C1.70485 19.7153 2.14259 19.5425 2.44711 19.2161L1.57164 18.6785L12.1916 20.0417C12.2867 20.6561 12.7626 21.1554 13.4096 21.2322C14.1709 21.3282 14.8751 20.7905 14.9893 20.0033C15.0845 19.2161 14.5326 18.5057 13.7713 18.4097Z" fill="#DC818D"/>
                         </svg>
                         <h3 className='font-line text-[18px] lg:text-[24px] text-[#DC818D] font-[400] leading-normal lg:whitespace-pre-line text-center'>
-                            {'Revomed International Partner'}
+                            {data?.subheader}
                         </h3>
                     </div>
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line sm:whitespace-normal text-center'>
-                        {'ความร่วมมือทางธุรกิจ\nในระดับนานาชาติ'}
+                        {data?.header}
                     </h2>
                 </div>
 
@@ -62,27 +53,27 @@ export default function HomePartner({locale}) {
                     <Image className=" object-contain object-center w-full h-full z-0" 
                         classNames={{img:"object-contain w-full h-full z-0 rounded-[16px]",wrapper:"object-contain w-full h-full z-0"}}
                         radius="none"
-                        src={map?.src}
+                        src={urlFor(data?.images?.image).url()}
                         placeholder="blur"
-                        alt={'Map Partner'}
+                        alt={data?.images?.alt}
                         width="100%" height="100%" quality={100}/>
                 </div>
 
                 {/* Coutry */}
                 <div className="flex flex-wrap gap-y-[40px] gap-x-[3%] md:gap-y-[56px] w-full sm:w-[80%] md:w-2/3 lg:w-full">
-                    {data?.map((item,index)=>(
+                    {data?.partner?.map((item,index)=>(
                         <div key={index} className="flex flex-col w-[48.5%] lg:w-[22.75%] h-full gap-y-[16px] lg:gap-y-[24px]">
                             <h3 className='font-line text-[18px] lg:text-[24px] text-[#0A2B40] font-[700] leading-[150%]'>
                                 {item?.title}
                             </h3>
                             <ul className="flex flex-col gap-y-[16px] w-full">
-                                {item?.partner?.map((item,index)=>(
+                                {item?.list?.map((item,index)=>(
                                     <li key={`list `+index} className="flex items-center gap-x-[16px]">
                                         <div className="hidden ss:flex justify-center items-center">
                                             <Image className="object-contain object-center w-[30px] h-[20px] z-0 rounded-[5px]" 
                                             classNames={{img:"object-contain w-[30px] h-[20px] z-0 rounded-[5px]",wrapper:"object-contain w-[30px] h-[20px] z-0 rounded-[5px]"}}
                                             radius="none"
-                                            src={item?.icon?.src}
+                                            src={urlFor(item?.image).url()}
                                             placeholder="blur"
                                             alt={item?.alt}
                                             width="30" height="20" quality={100}/>
@@ -107,18 +98,18 @@ export default function HomePartner({locale}) {
                 <Image className=" object-contain object-center w-full h-full z-0" 
                         classNames={{img:"object-contain w-full h-full z-0 rounded-[16px]",wrapper:"object-contain w-full h-full z-0"}}
                         radius="none"
-                        src={circle?.src}
+                        src={urlFor(data?.Confirmation?.image).url()}
                         placeholder="blur"
-                        alt={'ความร่วมมือทางธุรกิจในระดับนานาชาติ Circle'}
+                        alt={data?.Confirmation?.alt}
                         width="100%" height="100%" quality={100}/>              
                 </div>
                 <div className="flex sm:hidden justify-center items-center w-[80%] ss:w-[60%]">
                 <Image className=" object-contain object-center w-full h-full z-0" 
                         classNames={{img:"object-contain w-full h-full z-0 rounded-[16px]",wrapper:"object-contain w-full h-full z-0"}}
                         radius="none"
-                        src={circle2?.src}
+                        src={urlFor(data?.Confirmation?.imageM).url()}
                         placeholder="blur"
-                        alt={'ความร่วมมือทางธุรกิจในระดับนานาชาติ Circle'}
+                        alt={data?.Confirmation?.alt}
                         width="100%" height="100%" quality={100}/>              
                 </div>
                 

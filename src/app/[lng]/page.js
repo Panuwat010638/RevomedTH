@@ -19,18 +19,113 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function Home({ params }) {
+async function getPosts(params) {
+   
+  const lng  = decodeURIComponent(params.lng)
+  if(lng == "th"){
+      const query = groq`*[_type == "HomePage" && language->title == "${lng}" ] | order(_createdAt desc)`
+        const posts = await client.fetch(query)
+    
+        const queryBlog = groq`*[_type == "newsTH"  ] | order(_createdAt asc){
+          title,
+          mainImage,
+          slug,
+          body,
+          date,
+          'category':category->title,
+      }`
+        const postsBlog = await client.fetch(queryBlog)
+        const news = postsBlog.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+          });
+       
+    
+        return {
+            props: { posts,news }
+         
+        }
+  }else if(lng == "cn"){
+      const query = groq`*[_type == "HomePage" && language->title == "${lng}" ] | order(_createdAt desc)`
+        const posts = await client.fetch(query)
+    
+        const queryBlog = groq`*[_type == "newsCN"  ] | order(_createdAt asc){
+          title,
+          mainImage,
+          slug,
+          body,
+          date,
+          'category':category->title,
+      }`
+        const postsBlog = await client.fetch(queryBlog)
+        const news = postsBlog.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+          });
+       
+    
+        return {
+            props: { posts,news }
+         
+        }
+  }else {
+      const query = groq`*[_type == "HomePage" && language->title == "${lng}" ] | order(_createdAt desc)`
+        const posts = await client.fetch(query)
+    
+        const queryBlog = groq`*[_type == "newsEN"  ] | order(_createdAt asc){
+          title,
+          mainImage,
+          slug,
+          body,
+          date,
+          'category':category->title,
+      }`
+        const postsBlog = await client.fetch(queryBlog)
+        const news = postsBlog.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB - dateA;
+          });
+       
+    
+        return {
+            props: { posts,news }
+         
+        }
+  }
+  
+}
+
+export async function generateMetadata({ params, searchParams }, parent) {
+
+  const lng  = decodeURIComponent(params.lng)
+  const query = groq`*[_type == 'HomePage' && language->title == "${lng}" ][0]`
+  const post = await client.fetch(query)
+  
+  return {
+    title: post.seo?.titletag ,
+    description: post.seo?.description,
+    keywords: post.seo?.keywords,
+  }
+}
+
+export default async function Home({ params }) {
+  const posts = await getPosts(params);
+  const data = posts.props.posts;
+  const news = posts.props.news;
   return (
     <main>
       <HomeBanner locale={params.lng}/>
-      <HomeInnovation locale={params.lng}/>
-      <HomeAbout locale={params.lng}/>
-      <HomeCreateBrand locale={params.lng}/>
-      <HomeRevomedWorld locale={params.lng}/>
-      <HomePartner locale={params.lng}/>
-      <HomeGrow locale={params.lng}/>
-      <HomeSlide locale={params.lng}/>
-      <HomeBlog locale={params.lng}/>
+      <HomeInnovation data={data[0].INNOVATION} locale={params.lng}/>
+      <HomeAbout data={data[0].about} locale={params.lng}/>
+      <HomeCreateBrand data={data[0].brand} locale={params.lng}/>
+      <HomeRevomedWorld data={data[0].world} locale={params.lng}/>
+      <HomePartner data={data[0].partner} locale={params.lng}/>
+      <HomeGrow data={data[0].grow} locale={params.lng}/>
+      <HomeSlide data={data[0].slide} locale={params.lng}/>
+      <HomeBlog data={data[0].news} news={news} locale={params.lng}/>
     </main>
   );
 }

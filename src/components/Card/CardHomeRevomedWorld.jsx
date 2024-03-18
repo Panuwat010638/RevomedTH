@@ -1,7 +1,5 @@
 'use client'
 import { Image } from "@nextui-org/react"
-
-import groq from "groq";
 import client from "@/client"
 import imageUrlBuilder from '@sanity/image-url'
 const builder = imageUrlBuilder(client)
@@ -16,7 +14,7 @@ export default function CardHomeRevomedWorld({item,index}) {
             <Image className="object-cover object-center z-0" 
             classNames={{img:" object-cover w-full h-full z-0",wrapper:" object-cover z-0"}}
             radius="none"
-            src={item?.icon?.src}
+            src={urlFor(item?.image).url()}
             placeholder="blur"
             alt={item?.alt}
             width="80" height="80" quality={100}/>

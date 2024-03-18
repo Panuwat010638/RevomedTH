@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function HomeCreateBrand() {
+export default function HomeCreateBrand({data,locale}) {
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
@@ -19,48 +19,48 @@ export default function HomeCreateBrand() {
                             <path d="M13.7713 18.4097C13.3145 18.3521 12.8768 18.5249 12.5723 18.8321L13.4096 19.3889L2.80872 18.0257C2.71356 17.4113 2.23776 16.9121 1.59066 16.8353C0.829374 16.7393 0.125178 17.2769 0.0109852 18.0641C-0.0841758 18.8321 0.448725 19.5425 1.22905 19.6577C1.70485 19.7153 2.14259 19.5425 2.44711 19.2161L1.57164 18.6785L12.1916 20.0417C12.2867 20.6561 12.7626 21.1554 13.4096 21.2322C14.1709 21.3282 14.8751 20.7905 14.9893 20.0033C15.0845 19.2161 14.5326 18.5057 13.7713 18.4097Z" fill="#DC818D"/>
                         </svg>
                         <h3 className='font-line text-[18px] lg:text-[24px] text-[#DC818D] font-[400] leading-normal lg:whitespace-pre-line text-center'>
-                            {'อยากสร้างแบรนด์'}
+                            {data?.subheader}
                         </h3>
                     </div>
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center'>
-                        {'ทำไมต้อง Revomed'}
+                        {data?.header}
                     </h2>
                 </div>
         
                 <div className='flex flex-col md:flex-row justify-center items-center w-full sm:w-2/3  md:w-full md:h-[382px] lg:h-[382px] xl:h-[412px] gap-[8px]'>
                     <div className='flex flex-col gap-y-[4px] w-full md:w-1/3 h-[350px] sm:h-[240px] md:h-full bg-[#FFECEE] rounded-[16px] p-4 md:p-6'>
                         <h4 className='font-line text-[28px] lg:text-[40px] text-[#EBABB4] font-[700] whitespace-pre-line'>
-                            {'01'}
+                            {data?.list[0]?.num}
                         </h4>
                         <h4 className='font-line text-[32px] xl:text-[36px] text-[#EBABB4] font-[700] whitespace-pre-line'>
-                            {'Completed \nsolution \nOEM/ODM'}
+                            {data?.list[0]?.title}
                         </h4>
                     </div>
                     <div className='flex flex-col w-full md:w-2/3 md:h-full gap-[8px]'>
                         <div className='flex flex-col md:flex-row w-full h-[350px] sm:h-[240px] md:h-1/2 gap-[8px]'>
                             <div className='flex flex-col gap-y-[4px] w-full md:w-1/2 h-1/2 md:h-full bg-[#CFE9FA] rounded-[16px] p-4 md:p-6'>
                                 <h4 className='font-line text-[28px] lg:text-[40px] text-[#3D84B0] font-[700] whitespace-pre-line '>
-                                {'02'}
+                                {data?.list[1]?.num}
                                 </h4>
                                 <h4 className='font-line text-[20px] xl:text-[32px] text-[#3D84B0] font-[700] whitespace-pre-line'>
-                                    {'International Standard'}
+                                    {data?.list[1]?.title}
                                 </h4>
                             </div>
                             <div className='flex w-full md:w-1/2 h-1/2 md:h-full gap-[8px]'>
                                 <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 md:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
-                                        {'03'}
+                                        {data?.list[2]?.num}
                                     </h4>
                                     <h4 className='font-line text-[16px] xl:text-[18px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
-                                        {'Pioneer in research and innovation'}
+                                        {data?.list[2]?.title}
                                     </h4>
                                 </div>
                                 <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 md:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line '>
-                                        {'04'}
+                                        {data?.list[3]?.num}
                                     </h4>
                                     <h4 className='font-line text-[16px] xl:text-[18px] text-[#5E73B2] font-[700] whitespace-pre-line'>
-                                        {'Marketing Service and Digital Platform'}
+                                        {data?.list[3]?.title}
                                     </h4>
                                 </div>
                             </div>
@@ -69,27 +69,27 @@ export default function HomeCreateBrand() {
                             <div className='flex w-full md:w-1/2 h-1/2 md:h-full gap-[8px]'>
                                 <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 md:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line'>
-                                        {'05'}
+                                        {data?.list[4]?.num}
                                     </h4>
                                     <h4 className='font-line text-[16px]  xl:text-[18px] text-[#5E73B2] font-[700] whitespace-pre-line'>
-                                        {'Knowledge & Professional Staff'}
+                                        {data?.list[4]?.title}
                                     </h4>
                                 </div>
                                 <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 md:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
-                                        {'06'}
+                                        {data?.list[5]?.num}
                                     </h4>
                                     <h4 className='font-line text-[16px] xl:text-[18px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
-                                        {'Specialized Technology'}
+                                        {data?.list[5]?.title}
                                     </h4>
                                 </div>
                             </div>
                             <div className='flex flex-col gap-y-[4px] w-full md:w-1/2 h-1/2 md:h-full bg-[#CFE9FA] rounded-[16px] p-4 md:p-6'>
                                 <h4 className='font-line text-[28px] lg:text-[40px] text-[#3D84B0] font-[700] whitespace-pre-line'>
-                                    {'07'}
+                                    {data?.list[6]?.num}
                                 </h4>
                                 <h4 className='font-line text-[20px] xl:text-[32px] text-[#3D84B0] font-[700] whitespace-pre-line'>
-                                    {'Global Partnership'}
+                                    {data?.list[6]?.title}
                                 </h4>
                             </div>
                         </div>

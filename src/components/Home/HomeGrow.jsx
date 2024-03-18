@@ -3,12 +3,8 @@ import { Image } from "@nextui-org/react"
 import arrowR from "../../../public/assets/Images/Home/arrowR.png"
 import arrowT from "../../../public/assets/Images/Home/arrowT.png"
 
-export default function HomeGrow({locale}) {
-    const data = [
-        {year:'2023',detail:"เริ่มจากการขยายธุรกิจบริการด้าน\nOEM และ ODM แบบครบวงจรสู่\nกลุ่มประเทศในเอเชีย"},
-        {year:'2024',detail:"ขยายธุรกิจบริการแบบครบวงจรสู่\nกลุ่มประเทศยุโรป โดยเริ่มจาก\nประเทศนิวซีแลนด์"},
-        {year:'Next',detail:"ขยายกลุ่มธุรกิจผ่านเครื่อข่าย\nต่าง ๆ ทั่วโลก และเป็นผู้นำทางด้าน\nการสร้างแบรนด์"},
-    ]
+export default function HomeGrow({data,locale}) {
+    
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]'>
@@ -28,16 +24,16 @@ export default function HomeGrow({locale}) {
                             <path d="M13.7713 18.4097C13.3145 18.3521 12.8768 18.5249 12.5723 18.8321L13.4096 19.3889L2.80872 18.0257C2.71356 17.4113 2.23776 16.9121 1.59066 16.8353C0.829374 16.7393 0.125178 17.2769 0.0109852 18.0641C-0.0841758 18.8321 0.448725 19.5425 1.22905 19.6577C1.70485 19.7153 2.14259 19.5425 2.44711 19.2161L1.57164 18.6785L12.1916 20.0417C12.2867 20.6561 12.7626 21.1554 13.4096 21.2322C14.1709 21.3282 14.8751 20.7905 14.9893 20.0033C15.0845 19.2161 14.5326 18.5057 13.7713 18.4097Z" fill="#DC818D"/>
                         </svg>
                         <h3 className='font-line text-[18px] lg:text-[24px] text-[#DC818D] font-[400] leading-normal lg:whitespace-pre-line text-center'>
-                            {'การเติบโตของเรา'}
+                            {data?.subheader}
                         </h3>
                     </div>
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line sm:whitespace-normal text-center'>
-                        {'ความตั้งใจในการส่งมอบ\nสิ่งที่ดีที่สุด'}
+                        {data?.header}
                     </h2>
                 </div>
 
                 <div className="flex flex-col-reverse md:flex-row w-full md:justify-between md:gap-x-[10%] xl:gap-x-[15%] gap-y-[72px]">
-                    {data?.map((item,index)=>(
+                    {data?.data?.map((item,index)=>(
                         <div key={index} className="flex flex-row-reverse items-center md:items-start md:flex-col w-full md:w-[26.67%] xl:w-[23.3%] gap-[40px] z-[10]">
                             <div className="flex flex-col w-[80%] md:w-full gap-y-[16px]">
                                 <h4 className="font-line text-[24px] xl:text-[36px] text-[#EBABB4] font-[700] leading-[150%] uppercase">
