@@ -2,11 +2,15 @@
 import { useState,useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { usePathname } from 'next/navigation'
-import { useRouter } from 'next/navigation'
-import logoimg from "../../../public/assets/Images/Navbar/logo.png"
+import { usePathname,useRouter } from 'next/navigation'
+import client from "@/client"
+import imageUrlBuilder from '@sanity/image-url'
+const builder = imageUrlBuilder(client)
+function urlFor(source) {
+  return builder.image(source)
+}
 
-export default function Navbar({lang,localeData}) {
+export default function Navbar({lang,localeData,navbar}) {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -42,18 +46,6 @@ export default function Navbar({lang,localeData}) {
   
       return segments.join('/')
   }
-  const navbar = {
-      logo:{image:logoimg,alt:"Revomed Logo"},
-      menu:[
-        {title:"หน้าแรก",href:"/",status:true},
-        {title:"เกี่ยวกับ Revomed",href:"#",status:true},
-        {title:"Business Units",href:"#",status:true},
-        {title:"นักลงทุนสัมพันธ์",href:"#",status:true},
-        {title:"ข่าวสารของเรา",href:"#",status:true},
-        {title:"CSR (Corporate Social Responsibility)",href:"#",status:true},
-        {title:"ติดต่อเรา",href:"#",status:true},
-      ]
-  }
   return (
     <header className="fixed w-screen z-[100]">
         <nav className={` transition-all duration-500 ${scrolled==false && pathname==`/${lang}` ? "bg-transparent":" bg-[#fcfcfc] drop-shadow-md"}`}>
@@ -64,7 +56,7 @@ export default function Navbar({lang,localeData}) {
                 {/* Logo */}
                 <div className='flex items-center lg:w-[39%] h-full z-[110]'>
                     <Link href="/" className='flex justify-center items-center'>
-                        <Image className="object-contain object-center w-[136px] h-[41px]" alt={navbar?.logo?.alt} src={navbar?.logo?.image} quality={100} width={136} height={41} />
+                        <Image className="object-contain object-center w-[136px] h-[41px]" alt={navbar?.logo?.alt} src={urlFor(navbar?.logo?.image).url()} quality={100} width={136} height={41} />
                     </Link>
                 </div>
                 {/* Menu Button Mobile */}
@@ -93,7 +85,7 @@ export default function Navbar({lang,localeData}) {
                           {navbar?.menu?.slice(0,navbar?.menu?.length).map((item,index)=>(
                             <li key={index} onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} className={`${item?.status== true ? "flex":"hidden"} items-center w-full`}>
                                
-                                <Link onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} href={item?.href} className={`pl-[32px] xl:pl-[96px] text-[16px] xl:text-[18px] font-[500] leading-[150%] transition-colors duration-500 hover:text-[#002E62] uppercase ${pathname== `${item?.href}` ? "text-[#002E62]":"text-[#002E62]"}`}>
+                                <Link onClick={()=>setMobileMenuOpen(!mobileMenuOpen)} href={`/${lang}`+item?.href} className={`pl-[32px] xl:pl-[96px] text-[16px] xl:text-[18px] font-[500] leading-[150%] transition-colors duration-500 hover:text-[#002E62] uppercase ${pathname== `${item?.href}` ? "text-[#002E62]":"text-[#002E62]"}`}>
                                   {item?.title}
                                 </Link>
                               

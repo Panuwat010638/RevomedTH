@@ -18,7 +18,6 @@ export default function Footer() {
             {image:lo01,alt:"Revomed Logo"},
             {image:lo02,alt:"Revomed Logo"},
             {image:lo03,alt:"Revomed Logo"},
-            {image:lo04,alt:"Revomed Logo"},
             {image:lo05,alt:"Revomed Logo"},
             {image:lo06,alt:"Revomed Logo"},
             {image:lo07,alt:"Revomed Logo"},

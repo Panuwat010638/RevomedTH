@@ -123,7 +123,7 @@ export default async function RootLayout({ children,params: { lng } }) {
             src={`https://www.facebook.com/tr?id=${facebook?.title}&ev=PageView&noscript=1`}
           />
         </noscript>
-       <Navbar lang={lng} localeData={locale}/>
+       <Navbar navbar={navbar[0]} lang={lng} localeData={locale}/>
         {children}
         <Footer lang={lng} localeData={locale}/>
       </body>
