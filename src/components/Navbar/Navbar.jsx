@@ -23,7 +23,6 @@ export default function Navbar({lang,localeData}) {
         window.removeEventListener('scroll', handleScroll);
       };
     }, [scrolled]);
-  
   const locales = localeData.map(item => item.title);
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
