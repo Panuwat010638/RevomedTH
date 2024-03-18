@@ -1,7 +1,7 @@
 import CardMoreNews from "@/components/Card/CardMoreNews"
 
 export default function NewsSlugMoreNews({locale,news}) {
-    console.log(news)
+
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]'>

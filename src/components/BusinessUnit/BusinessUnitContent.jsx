@@ -8,7 +8,7 @@ function urlFor(source) {
 }
 
 export default function BusinessUnitContent({business}) {
-  console.log(business)
+
   return (
     <section className='bg-[#F3F5FB]'>
         <div className='max-w-full mx-auto pb-[80px] lg:pb-0'>

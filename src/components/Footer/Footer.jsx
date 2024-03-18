@@ -1,6 +1,12 @@
 'use client'
 import Image from "next/image"
 import Link from "next/link"
+import client from "@/client"
+import imageUrlBuilder from '@sanity/image-url'
+const builder = imageUrlBuilder(client)
+function urlFor(source) {
+  return builder.image(source)
+}
 import logoimg from "../../../public/assets/Images/Navbar/logoF.png"
 import lo01 from "../../../public/assets/Images/Navbar/lo01.png"
 import lo02 from "../../../public/assets/Images/Navbar/lo02.png"
@@ -11,8 +17,8 @@ import lo06 from "../../../public/assets/Images/Navbar/lo06.png"
 import lo07 from "../../../public/assets/Images/Navbar/lo07.png"
 import lo08 from "../../../public/assets/Images/Navbar/lo08.png"
 
-export default function Footer() {
-    const footer ={
+export default function Footer({footer,lang,localeData}) {
+    const footer2 ={
         logo:{image:logoimg,alt:"Revomed Logo"},
         morelogo:[
             {image:lo01,alt:"Revomed Logo"},
@@ -63,8 +69,8 @@ export default function Footer() {
             <div className="flex flex-col items-center lg:items-start justify-center w-full h-full gap-y-[32px]">
                 {/* Logo */}
                 <div className="flex justify-center lg:justify-start items-center w-full">
-                    <Link href="/" className='flex justify-center items-center cursor-pointer'>
-                        <Image className="object-contain object-center w-[136px] h-[41px]" alt={footer?.logo?.alt} src={footer?.logo?.image} quality={100} width={136} height={41} />
+                    <Link href={`/${lang}`} className='flex justify-center items-center cursor-pointer'>
+                        <Image className="object-contain object-center w-[136px] h-[41px]" alt={footer?.logo?.alt} src={urlFor(footer?.logo?.image).url()} quality={100} width={136} height={41} />
                     </Link>
                 </div>
                 {/* Top */}
@@ -119,7 +125,7 @@ export default function Footer() {
                             <ul className="flex flex-col gap-y-[16px] col-span-2 lg:col-span-1 w-full">
                             {footer?.menu?.slice(0,4).map((item,index)=>(
                                 <li key={index} className={`${item?.status== true ? "flex":"hidden"} items-center w-full`}>
-                                    <Link  href={item?.href} className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
+                                    <Link  href={`/${lang}`+item?.href} className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                       {item?.title}
                                     </Link>
                                 </li>
@@ -127,8 +133,8 @@ export default function Footer() {
                             </ul>
                             <ul className="flex flex-col gap-y-[16px] w-full">
                             {footer?.menu?.slice(4,footer?.menu?.length).map((item,index)=>(
-                                <li key={index} className={`${item?.status== true ? "flex":"hidden"} items-center w-full`}>
-                                    <Link  href={item?.href} className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
+                                <li key={index} className={`/${lang}${item?.status== true ? "flex":"hidden"} items-center w-full`}>
+                                    <Link  href={`/${lang}`+item?.href} className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                       {item?.title}
                                     </Link>
                                 </li>
@@ -143,7 +149,7 @@ export default function Footer() {
                                     {footer?.partner[0]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[16px] w-full">
-                                {footer?.partner[0]?.partner?.map((item,index)=>(
+                                {footer?.partner[0]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                           {item?.name}
@@ -158,7 +164,7 @@ export default function Footer() {
                                     {footer?.partner[1]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[16px] w-full">
-                                {footer?.partner[1]?.partner?.map((item,index)=>(
+                                {footer?.partner[1]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                           {item?.name}
@@ -173,7 +179,7 @@ export default function Footer() {
                                     {footer?.partner[2]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[16px] w-full">
-                                {footer?.partner[2]?.partner?.map((item,index)=>(
+                                {footer?.partner[2]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                           {item?.name}
@@ -185,7 +191,7 @@ export default function Footer() {
                                     {footer?.partner[3]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[16px] w-full">
-                                {footer?.partner[3]?.partner?.map((item,index)=>(
+                                {footer?.partner[3]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
                                           {item?.name}
@@ -202,7 +208,7 @@ export default function Footer() {
                 <div className="w-full sm:w-[80%] md:w-[60%] lg:w-full grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 lg:grid-cols-8 lg:grid-rows-none gap-[24px] lg:gap-[48px] pt-[32px] border-t-[1px] border-solid border-[#6F7489]">
                     {footer?.morelogo?.map((item,index)=>(
                         <div className="flex justify-center items-center w-full h-[80px]">
-                            <Image className="object-contain object-center w-full h-full" alt={item?.alt} src={item?.image} quality={100} width={136} height={80} />
+                            <Image className="object-contain object-center w-full h-full" alt={item?.alt} src={urlFor(item?.image).url()} quality={100} width={136} height={80} />
                         </div>
                     ))}
                 </div>

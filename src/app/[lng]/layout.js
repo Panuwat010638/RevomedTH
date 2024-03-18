@@ -125,7 +125,7 @@ export default async function RootLayout({ children,params: { lng } }) {
         </noscript>
        <Navbar navbar={navbar[0]} lang={lng} localeData={locale}/>
         {children}
-        <Footer lang={lng} localeData={locale}/>
+        <Footer footer={footer[0]} lang={lng} localeData={locale}/>
       </body>
     </html>
   );
