@@ -1,8 +1,7 @@
 'use client'
 import { useEffect,useState } from "react"
 
-
-export default function HomeSlide({data,locale}) {
+export default function AboutSlide({data,locale}) {
     const [activeIndex, setActiveIndex] = useState(0);
     const [activeIndex2, setActiveIndex2] = useState(0);
     const [activeIndex3, setActiveIndex3] = useState(0);

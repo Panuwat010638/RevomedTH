@@ -7,11 +7,10 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function HomePartner({data,locale}) {
-    
+export default function AboutPartner({data,locale}) {
   return (
     <section className='bg-[#fcfcfc]'>
-        <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
+        <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]'>
             <div className='flex flex-col justify-center items-center w-full h-full gap-y-[48px]'>
                 {/* Header */}
                 <div className='flex flex-col justify-center items-center w-full gap-y-[12px]'>
@@ -81,25 +80,7 @@ export default function HomePartner({data,locale}) {
                     ))}
                 </div>
 
-                {/* circle */}
-                <div className="hidden sm:flex justify-center items-center w-full">
-                <Image className=" object-contain object-center w-full h-full z-0" 
-                        classNames={{img:"object-contain w-full h-full z-0 rounded-[16px]",wrapper:"object-contain w-full h-full z-0"}}
-                        radius="none"
-                        src={urlFor(data?.Confirmation?.image).url()}
-                        placeholder="blur"
-                        alt={data?.Confirmation?.alt}
-                        width="100%" height="100%" quality={100}/>              
-                </div>
-                <div className="flex sm:hidden justify-center items-center w-[80%] ss:w-[60%]">
-                <Image className=" object-contain object-center w-full h-full z-0" 
-                        classNames={{img:"object-contain w-full h-full z-0 rounded-[16px]",wrapper:"object-contain w-full h-full z-0"}}
-                        radius="none"
-                        src={urlFor(data?.Confirmation?.imageM).url()}
-                        placeholder="blur"
-                        alt={data?.Confirmation?.alt}
-                        width="100%" height="100%" quality={100}/>              
-                </div>
+        
                 
             </div>
         </div>

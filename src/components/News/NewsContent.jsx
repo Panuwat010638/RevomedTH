@@ -72,7 +72,7 @@ export default function NewsContent({news,category,locale}) {
                 <div className="flex flex-col md:flex-row flex-wrap items-center w-full ss:w-[80%] sm:w-[60%] md:w-[70%] lg:w-auto gap-[16px] lg:gap-[24px]">
                     <button onClick={()=>setCat("ALL")} className={`flex justify-center items-center w-full lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
                     transition-all duration-500 rounded-[8px]
-                    ${cat == 'ALL' ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#6F7489] hover:bg-[#f3f5fb]"}
+                    ${cat == 'ALL' ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb]"}
                     font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
                         ข่าวสารทั้งหมด
                     </button>
@@ -80,7 +80,7 @@ export default function NewsContent({news,category,locale}) {
                     {category?.map((item,index)=>(
                         <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
                         transition-all duration-500 rounded-[8px]
-                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#6F7489] hover:bg-[#f3f5fb]"}
+                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb]"}
                         font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
                             {item?.title}
                         </button>

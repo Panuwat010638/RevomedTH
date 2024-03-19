@@ -43,10 +43,8 @@ export default function HomeGrow({data,locale}) {
                                     {item?.detail}
                                 </p>
                             </div>
-                            <div className="flex md:hidden justify-center items-center min-w-[56px] md:w-[80px] min-h-[56px] md:h-[80px] bg-[#EBABB4] rounded-full">
-                                <label className="font-line text-[24px] xl:text-[36px] text-[#fcfcfc] font-[800] leading-[150%]">
-                                    {index+1}
-                                </label>
+                            <div className="flex md:hidden justify-center items-center min-w-[56px] md:w-[80px] min-h-[56px] md:h-[80px] rounded-full">
+                               
                             </div>
                         </div>
                     ))}

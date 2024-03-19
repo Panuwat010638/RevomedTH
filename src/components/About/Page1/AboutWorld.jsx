@@ -1,8 +1,8 @@
 'use client'
-import ButtonBlue from "../Button/ButtonBlue"
-import CardHomeRevomedWorld from "../Card/CardHomeRevomedWorld"
+import ButtonBlue from "@/components/Button/ButtonBlue"
+import CardHomeRevomedWorld from "@/components/Card/CardHomeRevomedWorld"
 
-export default function HomeRevomedWorld({data,locale}) {
+export default function AboutWorld({data,locale}) {
   return (
     <section className='bg-[#F3F5FB]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
