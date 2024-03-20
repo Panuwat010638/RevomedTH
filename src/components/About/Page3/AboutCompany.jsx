@@ -14,7 +14,7 @@ export default function AboutCompany({data,locale}) {
             <div className='flex flex-col justify-center items-center w-full h-full relative gap-y-[32px]'>
 
                 <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start w-full gap-y-[24px] lg:gap-y-[40px] lg:gap-x-[5%] xl:gap-x-[10%]">
-                    <div className="flex flex-col justify-center items-center w-full sm:w-2/3 lg:w-[30%] gap-y-[12px]">
+                    <div className="flex flex-col justify-center items-center w-full sm:w-2/3 lg:w-[30%] gap-y-[24px]">
                         <div className="flex justify-center items-center w-full">
                             <Image className="object-cover object-center w-full h-[92px] z-0 rounded-[16px]" 
                             classNames={{img:" object-cover w-full h-full z-0 rounded-[16px]",wrapper:" object-cover w-full h-full z-0"}}
@@ -34,7 +34,7 @@ export default function AboutCompany({data,locale}) {
                             width="100%" height="100%" quality={100}/>
                         </div>
                         <div className="flex flex-col items-center w-full gap-y-[4px]">
-                            <h3 className="text-[18px] lg:text-[20px] text-[#DC818D] font-[700] uppercase">
+                            <h3 className="text-[18px] xl:text-[20px] text-[#DC818D] font-[700] uppercase">
                                 {data?.company?.name}
                             </h3>
                             <p className="font-line text-[16px] text-[#8097B0] font-[400]">

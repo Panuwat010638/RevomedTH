@@ -79,7 +79,7 @@ export default function HomeSlide({data,locale}) {
                             <h4 className="font-line text-[16px] text-[#6F7489] font-[400] leading-[150%] text-center">
                                 {item?.location}
                             </h4>
-                            <div className="flex justify-center w-full h-[120px] pb-[8px] border-b-[1px] border-solid border-[#ABB1C1]">
+                            <div className="flex justify-center w-full h-[90px] sm:h-[120px] lg:h-[160px] xl:h-[120px] pb-[8px] border-b-[1px] border-solid border-[#ABB1C1]">
                                 <h3 className="font-line text-[20px] xl:text-[24px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center">
                                     {item?.title}
                                 </h3>
@@ -98,7 +98,7 @@ export default function HomeSlide({data,locale}) {
                             <h4 className="font-line text-[16px] text-[#6F7489] font-[400] leading-[150%] text-center">
                                 {item?.location}
                             </h4>
-                            <div className="flex justify-center w-full h-[90px] lg:h-[120px] pb-[12px] border-b-[1px] border-solid border-[#ABB1C1]">
+                            <div className="flex justify-center w-full h-[90px] sm:h-[120px] lg:h-[160px] xl:h-[120px] pb-[12px] border-b-[1px] border-solid border-[#ABB1C1]">
                                 <h3 className="font-line text-[20px] xl:text-[24px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center">
                                     {item?.title}
                                 </h3>
@@ -117,7 +117,7 @@ export default function HomeSlide({data,locale}) {
                             <h4 className="font-line text-[16px] text-[#6F7489] font-[400] leading-[150%] text-center">
                                 {item?.location}
                             </h4>
-                            <div className="flex justify-center w-full h-[120px] pb-[8px] border-b-[1px] border-solid border-[#ABB1C1]">
+                            <div className="flex justify-center w-full h-[120px] lg:h-[160px] xl:h-[120px] pb-[8px] lg:pb-[16px] border-b-[1px] border-solid border-[#ABB1C1]">
                                 <h3 className="font-line text-[20px] xl:text-[24px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center">
                                     {item?.title}
                                 </h3>

@@ -19,7 +19,7 @@ export default function CardHomeRevomedWorld({item,index}) {
             alt={item?.alt}
             width="80" height="80" quality={100}/>
         </div>
-        <p className='text-[16px] lg:text-[18px] text-[#BA636F] font-[400] leading-[150%] lg:whitespace-pre-line text-center'>
+        <p className='text-[16px] xl:text-[18px] text-[#BA636F] font-[400] leading-[150%] lg:whitespace-pre-line text-center'>
             {item?.title}
         </p>
     </div>
