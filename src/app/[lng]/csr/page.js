@@ -115,7 +115,9 @@ export default async function CSRpage({params}) {
         <CSRHeader data={data[0]?.header} locale={params.lng}/>
         <CSRAbout  data={data[0]?.about}  locale={params.lng}/>
         <CSRRoadmap data={data[0]?.ourroadmap}  locale={params.lng}/>
-        <CSRNews   data={data[0]?.news} news={news} locale={params.lng}/>
+        <div className={`${news[0]== undefined ? "hidden":"block"}`}>
+          <CSRNews   data={data[0]?.news} news={news} locale={params.lng}/>
+        </div>
     </main>
   )
 }
