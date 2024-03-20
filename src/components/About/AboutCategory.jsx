@@ -10,6 +10,8 @@ import AboutPartner from "./Page1/AboutPartner"
 import AboutSlide from "./Page1/AboutSlide"
 //Page2
 import AboutCeo from "./Page2/AboutCeo"
+//page3
+import AboutCompany from "./Page3/AboutCompany"
 
 export default function AboutCategory({data1,data2,data3,category,locale}) {
     const [cat,setCat]=useState(category[0]?.title)
@@ -51,7 +53,7 @@ export default function AboutCategory({data1,data2,data3,category,locale}) {
 
                 {cat== category[2].title ? (
                     <div className="flex flex-col w-full">
-
+                        <AboutCompany data={data3.about} locale={locale}/>
                     </div>
                 ):null}
           

@@ -20,8 +20,10 @@ async function getPosts(params) {
     const data1 = await client.fetch(query)
     const query2 = groq`*[_type == "AboutCEO" && language->title == "${lng}" ] | order(_createdAt desc)`
     const data2 = await client.fetch(query2)
+    const query3 = groq`*[_type == "AboutCompany" && language->title == "${lng}" ] | order(_createdAt desc)`
+    const data3 = await client.fetch(query3)
         return {
-            props: { data1 ,data2}
+            props: { data1 ,data2,data3}
          
         }
 }
@@ -43,12 +45,13 @@ export default async function Aboutpage({params}) {
     const posts = await getPosts(params);
     const data1 = posts.props.data1;
     const data2 = posts.props.data2;
+    const data3 = posts.props.data3
    
   return (
     <main>
         <AboutBanner data={data1[0]?.banner} locale={params.lng}/>
         <AboutHeader data={data1[0]?.header} locale={params.lng}/>
-        <AboutCategory category={data1[0]?.category} data1={data1[0]} data2={data2[0]} locale={params.lng}/>
+        <AboutCategory category={data1[0]?.category} data1={data1[0]} data2={data2[0]} data3={data3[0]} locale={params.lng}/>
     </main>
   )
 }
