@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer'
 
 export async function POST(request) {
     try {
-        const { email,product,name,tel,message } = await request.json();
+        const { email,lastname,name,tel,message } = await request.json();
 
         require('dotenv').config()
 
@@ -24,9 +24,9 @@ export async function POST(request) {
             html: `
                 <h3>สวัสดีครับ มีลูกค้าติดต่อมาครับ</h3>
                 <li> ชื่อ: ${name}</li>
+                <li> นามสกุล: ${lastname}</li>
                 <li> เบอร์โทร: ${tel}</li>
                 <li> อีเมล: ${email}</li>
-                <li> สินค้าที่สนใจ: ${product}</li>
                 <li> ข้อความ : ${message}</li> 
                 `
         }

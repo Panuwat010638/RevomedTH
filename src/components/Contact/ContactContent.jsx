@@ -6,9 +6,10 @@ import { useState,useEffect } from "react";
 
 export default function ContactContent({data}) {
     const [name,setName]=useState('');
+    const [lastname,setLastName]=useState('');
     const [email,setEmail]=useState('');
     const [tel,setTel]=useState('');
-    const [product, setProduct] = useState('');
+ 
     const [message,setMessage]=useState('')
 
     const [confirm,setConfirm]= useState(false)
@@ -25,14 +26,14 @@ export default function ContactContent({data}) {
             'content-type': 'application/json'
           },
           body: JSON.stringify({
-            email,product,name,tel,message
+            email,lastname,name,tel,message
       
           })
           
         })
         
         setName('');
-        setProduct('')
+        setLastName('');
         setTel('');
         setEmail('');
         setMessage('');
@@ -68,27 +69,20 @@ export default function ContactContent({data}) {
                                     onChange={(e)=>{setName(e.target.value)}} 
                                     type="text" label={data?.input?.name} />
                                 <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
+                                    size={'sm'} value={lastname} 
+                                    onChange={(e)=>{setLastName(e.target.value)}} 
+                                    type="text" label={data?.input?.lastname} />
+                            </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
+                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                     size={'sm'} value={email} 
                                     onChange={(e)=>{setEmail(e.target.value)}}
                                     type="email" label={data?.input?.email} />
-                            </div>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
                                 <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                     size={'sm'} value={tel} 
                                     onChange={(e)=>{setTel(e.target.value)}}
                                     type="tel" label={data?.input?.tel} />
-                                <Select 
-                                  size={'sm'}
-                                  labelPlacement="outside"
-                                  placeholder={data?.input?.product} 
-                                  selectedKeys={[product]}
-                                  onChange={handleSelectionChangeProduct}
-                                  className="w-full bg-[#F3F5FB]" 
-                                  classNames={{base:"rounded-[8px]",trigger:"bg-[#F3F5FB] h-[48px] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
-                                >
-                                
-                                </Select>
-                  
+                 
                             </div>
                         </div>
                         <div className="flex w-full justify-center items-center h-[190px]">
