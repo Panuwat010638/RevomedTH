@@ -9,7 +9,7 @@ export default function CSRRoadmap({data,locale}) {
             <div className='flex flex-col lg:flex-row justify-center items-center w-full h-full lg:h-[400px] xl:h-[380px] gap-y-[24px] gap-x-[2.5%]'>
                 {/* Header */}
                 <div className='flex w-full lg:w-[15%] lg:h-full justify-center lg:justify-start border-b-[1px] lg:border-b-0 border-r-0 lg:border-r-[1px] border-solid border-[#EBABB4] pb-[24px] lg:pb-0 pr-0 lg:pr-[24px]'>
-                    <h2 className='font-line text-[32px] text-[#002E62] font-[700] whitespace-pre-line text-center lg:text-start'>
+                    <h2 className='font-line text-[24px] xl:text-[32px] text-[#002E62] font-[700] whitespace-pre-line text-center lg:text-start'>
                         {data?.header}
                     </h2>
                 </div>

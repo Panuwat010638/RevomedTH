@@ -115,7 +115,7 @@ export default async function investmentpage({params}) {
         <InvestmentBanner data={data[0]?.banner} locale={params.lng}/>
         <InvestmentHeader data={data[0]?.header} locale={params.lng}/>
         <InvestmentShapeoftheFuture data={data[0]?.ShapeoftheFuture} locale={params.lng}/>
-        <InvestmentShareholderInformation data={data[0]?.ShareholderInformation} locale={params.lng}/>
+        {/*<InvestmentShareholderInformation data={data[0]?.ShareholderInformation} locale={params.lng}/>*/}
         <InvestmentNews data={data[0]?.news} news={news} locale={params.lng}/>
     </main>
   )

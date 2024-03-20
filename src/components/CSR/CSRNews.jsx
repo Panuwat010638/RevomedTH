@@ -5,7 +5,7 @@ export default function CSRNews({locale,news,data}) {
   return (
     <section className='bg-[#F3F5FB]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 py-[48px] sm:py-[60px] xl:py-[80px]'>
-            <div className='flex flex-col justify-center md:justify-between items-center w-full h-full gap-[40px]'>
+            <div className='flex flex-col justify-center md:justify-between items-center w-full h-full gap-[40px] lg:gap-y-[56px]'>
                 {/* Header */}
                 <div className='flex flex-col justify-center items-center w-full gap-y-[12px]'>
                     <div className='flex justify-center items-center gap-x-[20px]'>

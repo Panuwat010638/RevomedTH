@@ -63,17 +63,17 @@ export default function ContactContent({data}) {
                     <form onSubmit={sendMail} className='flex flex-col w-full gap-y-[16px] lg:gap-y-[24px]'>
                         <div className="flex flex-col w-full gap-y-[16px] lg:gap-y-[24px]">
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
-                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]"}}
+                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                     size={'sm'} value={name} 
                                     onChange={(e)=>{setName(e.target.value)}} 
                                     type="text" label={data?.input?.name} />
-                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]"}}
+                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                     size={'sm'} value={email} 
                                     onChange={(e)=>{setEmail(e.target.value)}}
                                     type="email" label={data?.input?.email} />
                             </div>
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[24px]">
-                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]"}}
+                                <Input className="w-full" classNames={{base:"rounded-[8px]",inputWrapper:"h-[48px] bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                     size={'sm'} value={tel} 
                                     onChange={(e)=>{setTel(e.target.value)}}
                                     type="tel" label={data?.input?.tel} />
@@ -84,7 +84,7 @@ export default function ContactContent({data}) {
                                   selectedKeys={[product]}
                                   onChange={handleSelectionChangeProduct}
                                   className="w-full bg-[#F3F5FB]" 
-                                  classNames={{base:"rounded-[8px]",trigger:"bg-[#F3F5FB] h-[48px] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]"}}
+                                  classNames={{base:"rounded-[8px]",trigger:"bg-[#F3F5FB] h-[48px] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                                 >
                                 
                                 </Select>
@@ -98,7 +98,7 @@ export default function ContactContent({data}) {
                                 placeholder={data?.input?.message}
                                 className="w-full h-full"
                                 radius="8"
-                                classNames={{base:"rounded-[8px]",innerWrapper:"w-full h-[190px] py-[12px] bg-[#F3F5FB]",inputWrapper:"bg-[#F3F5FB] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]"}}
+                                classNames={{base:"rounded-[8px]",innerWrapper:"w-full h-[190px] py-[12px] bg-[#F3F5FB]",inputWrapper:"bg-[#F3F5FB] data-[hover=true]:bg-[#F3F5FB] group-data-[focus=true]:bg-[#F3F5FB]",placeholder:"text-[16px] text-[#6F7489] font-[400]"}}
                             />
                         </div>
                         <ButtonForm type='submit' text={data?.input?.button}/>
