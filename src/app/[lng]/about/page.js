@@ -49,6 +49,7 @@ export default async function Aboutpage({params}) {
    
   return (
     <main>
+        <div className="flex w-full h-[80px]"/>
         <AboutBanner data={data1[0]?.banner} locale={params.lng}/>
         <AboutHeader data={data1[0]?.header} locale={params.lng}/>
         <AboutCategory category={data1[0]?.category} data1={data1[0]} data2={data2[0]} data3={data3[0]} locale={params.lng}/>
