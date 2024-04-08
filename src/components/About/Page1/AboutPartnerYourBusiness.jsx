@@ -35,7 +35,7 @@ export default function AboutPartnerYourBusiness({data,locale}) {
                                 {item?.detail}
                             </p>
                         </div>
-                    ))}
+                     ))}
                 </div>
                 </div>
 
