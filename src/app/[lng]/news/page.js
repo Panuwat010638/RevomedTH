@@ -112,6 +112,7 @@ export default async function newspage({ params }) {
     const categoryCN = posts.props.NewscategoryCN;
   return (
     <main>
+  
         <div className="flex w-full h-[80px]"/>
         <NewsBanner data={data[0]?.banner} locale={params.lng}/>
         <NewsHeader data={data[0]?.header} locale={params.lng}/>

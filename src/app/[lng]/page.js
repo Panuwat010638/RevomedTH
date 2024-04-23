@@ -132,6 +132,7 @@ export default async function Home({ params }) {
   const news = posts.props.news;
   return (
     <main>
+      <h1 className="sr-only">{data[0]?.seo?.titletag}</h1>
       <HomeBanner locale={params.lng}/>
       <HomeInnovation data={data[0].INNOVATION} locale={params.lng}/>
       <HomeAbout data={data[0].about} locale={params.lng}/>

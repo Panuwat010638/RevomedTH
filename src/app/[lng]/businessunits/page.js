@@ -66,6 +66,7 @@ export default async function BusinessUnitspage({ params }) {
     const business = posts.props.business
   return (
     <main>
+        <h1 className="sr-only">{data[0]?.seo?.titletag}</h1>
         <div className="flex w-full h-[80px]"/>
         <BusinessUnitBanner data={data[0]?.banner} locale={params.lng}/>
         <BusinessUnitHeader data={data[0]?.header} locale={params.lng}/>
