@@ -74,7 +74,7 @@ export default function NewsContent({news,category,locale}) {
                     transition-all duration-500 rounded-[8px]
                     ${cat == 'ALL' ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb]"}
                     font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
-                        ข่าวสารทั้งหมด
+                        {locale== 'cn' ? "所有新闻":locale== "th"?"ข่าวสารทั้งหมด":"All News"}
                     </button>
                     
                     {category?.map((item,index)=>(
