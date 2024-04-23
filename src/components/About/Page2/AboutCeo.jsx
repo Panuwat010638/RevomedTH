@@ -24,7 +24,6 @@ const ptComponents = {
             if (!value?.asset?._ref) {
                 return null
             }
-  
             return (
               <div className="flex justify-center w-full h-full aspect-auto my-8">
               <Image className="object-contain object-center w-full h-full z-0 rounded-[16px]" 
