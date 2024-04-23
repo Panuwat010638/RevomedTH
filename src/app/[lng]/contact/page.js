@@ -30,11 +30,26 @@ async function getPosts(params) {
     const lng  = decodeURIComponent(params.lng)
     const query = groq`*[_type == 'ContactPage' && language->title == "${lng}" ][0]`
     const post = await client.fetch(query)
-    
+    const ogImageUrl = post?.seo?.openGraphImage != undefined ? urlFor(post?.seo?.openGraphImage).width(1200).height(630).fit('scale').auto('format').format('png').url():null;
     return {
       title: post.seo?.titletag ,
       description: post.seo?.description,
       keywords: post.seo?.keywords,
+      alternates: {
+        canonical: `/contact`,
+        languages: {
+          'en': '/en',
+          'th': '/th',
+          'cn': '/cn'
+        },
+      },
+      openGraph: {
+        title: post.seo?.titletag,
+        description: post.seo?.description,
+        images: ogImageUrl ? [ ogImageUrl ] : ['/th/og.png' ],
+        type: 'website',
+        authors: ['C.C. AUTO PART Co., Ltd.']
+      }
     }
   }
 
