@@ -12,7 +12,7 @@ function urlFor(source) {
 
 export default function Navbar({lang,localeData,navbar}) {
     const [scrolled, setScrolled] = useState(false);
-
+    
     useEffect(() => {
       const handleScroll = () => {
         const isScrolled = window.scrollY > 80;
@@ -29,7 +29,8 @@ export default function Navbar({lang,localeData,navbar}) {
     }, [scrolled]);
   const locales = localeData.map(item => item.title);
   const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const redirectedPathname = (locale) => {
   
       if (!pathname) return '/'
@@ -59,6 +60,25 @@ export default function Navbar({lang,localeData,navbar}) {
                         <Image className="object-contain object-center w-[136px] h-[41px]" alt={navbar?.logo?.alt} src={urlFor(navbar?.logo?.image).url()} quality={100} width={136} height={41} />
                     </Link>
                 </div>
+                {/* Set Lang */}
+                <ul className='flex justify-end items-center w-full list-none'>
+                        <li className='flex'>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                            <path d="M21.9102 9.14013C21.9102 9.14013 21.9102 9.14013 21.9102 9.09013C21.2056 7.16635 19.9271 5.50541 18.2477 4.33199C16.5683 3.15857 14.5689 2.5293 12.5202 2.5293C10.4714 2.5293 8.47213 3.15857 6.79271 4.33199C5.11328 5.50541 3.8348 7.16635 3.1302 9.09013C3.1302 9.09013 3.1302 9.09013 3.1302 9.14013C2.34332 11.311 2.34332 13.6892 3.1302 15.8601C3.1302 15.8601 3.1302 15.8601 3.1302 15.9101C3.8348 17.8339 5.11328 19.4948 6.79271 20.6683C8.47213 21.8417 10.4714 22.471 12.5202 22.471C14.5689 22.471 16.5683 21.8417 18.2477 20.6683C19.9271 19.4948 21.2056 17.8339 21.9102 15.9101C21.9102 15.9101 21.9102 15.9101 21.9102 15.8601C22.6971 13.6892 22.6971 11.311 21.9102 9.14013ZM4.7602 14.5001C4.41342 13.1893 4.41342 11.8109 4.7602 10.5001H6.6202C6.46023 11.8287 6.46023 13.1716 6.6202 14.5001H4.7602ZM5.5802 16.5001H6.9802C7.21491 17.392 7.55041 18.2542 7.9802 19.0701C6.99949 18.4021 6.17969 17.5242 5.5802 16.5001ZM6.9802 8.50013H5.5802C6.17107 7.47921 6.98039 6.60159 7.9502 5.93013C7.53075 6.74737 7.20534 7.60954 6.9802 8.50013ZM11.5002 20.2001C10.272 19.2988 9.40934 17.9854 9.0702 16.5001H11.5002V20.2001ZM11.5002 14.5001H8.6402C8.45359 13.1733 8.45359 11.8269 8.6402 10.5001H11.5002V14.5001ZM11.5002 8.50013H9.0702C9.40934 7.01489 10.272 5.70144 11.5002 4.80013V8.50013ZM19.4202 8.50013H18.0202C17.7855 7.60828 17.45 6.74606 17.0202 5.93013C18.0009 6.5982 18.8207 7.47607 19.4202 8.50013ZM13.5002 4.80013C14.7284 5.70144 15.591 7.01489 15.9302 8.50013H13.5002V4.80013ZM13.5002 20.2001V16.5001H15.9302C15.591 17.9854 14.7284 19.2988 13.5002 20.2001ZM16.3602 14.5001H13.5002V10.5001H16.3602C16.5468 11.8269 16.5468 13.1733 16.3602 14.5001ZM17.0502 19.0701C17.48 18.2542 17.8155 17.392 18.0502 16.5001H19.4502C18.8507 17.5242 18.0309 18.4021 17.0502 19.0701ZM20.2402 14.5001H18.3802C18.4615 13.8366 18.5016 13.1686 18.5002 12.5001C18.5013 11.8316 18.4612 11.1637 18.3802 10.5001H20.2402C20.587 11.8109 20.587 13.1893 20.2402 14.5001Z" fill="#14142B"/>
+                          </svg>
+                        </li>
+                        
+                        {locales.map((locale, index) => {
+                        let selectedLang = pathname.split('/')[1]
+                        return (
+                            <li key={index} className={`px-[12px] ${index==(locales.length-1) ? "border-none":" border-r-[2px] border-solid border-[#ffffff]"} ${locale == selectedLang ? 'text-[#14142B]' : ' text-[#3e3e4e]'} hover:text-[#14142B] transition-all duration-500 uppercase text-[14px] font-[400] leading-[125%]`}>
+                                <Link passHref href={redirectedPathname(locale)}>
+                                    {locale}
+                                </Link>
+                            </li>
+                            )
+                        })}
+                      </ul>
                 {/* Menu Button Mobile */}
                 <div className="flex items-center h-full z-[110]">
                   <button

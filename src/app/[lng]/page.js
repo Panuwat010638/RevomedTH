@@ -50,7 +50,7 @@ async function getPosts(params) {
       const query = groq`*[_type == "HomePage" && language->title == "${lng}" ] | order(_createdAt desc)`
         const posts = await client.fetch(query)
     
-        const queryBlog = groq`*[_type == "newsCN"  ] | order(_createdAt asc){
+        const queryBlog = groq`*[_type == "newsTH"  ] | order(_createdAt asc){
           title,
           mainImage,
           slug,
@@ -74,7 +74,7 @@ async function getPosts(params) {
       const query = groq`*[_type == "HomePage" && language->title == "${lng}" ] | order(_createdAt desc)`
         const posts = await client.fetch(query)
     
-        const queryBlog = groq`*[_type == "newsEN"  ] | order(_createdAt asc){
+        const queryBlog = groq`*[_type == "newsTH"  ] | order(_createdAt asc){
           title,
           mainImage,
           slug,
