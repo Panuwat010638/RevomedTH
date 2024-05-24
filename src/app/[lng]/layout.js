@@ -34,7 +34,7 @@ async function getPosts({lng}) {
   const footer = await client.fetch(queryF, {
     next: { revalidate: 10 },
   })
-  const queryL = groq`*[_type == "language"] | order(_createdAt desc)`
+  const queryL = groq`*[_type == "language"] | order(_createdAt asc)`
   const locale = await client.fetch(queryL, {
     next: { revalidate: 10 },
   })

@@ -17,14 +17,14 @@ export async function getStaticParams({ params, searchParams }, parent) {
         }))
     }else if(lng == "cn"){
         const pathsCN = [] = await client.fetch(
-            `*[_type == "newTH" && defined(slug.currenct)][].slug.current`
+            `*[_type == "newEN" && defined(slug.currenct)][].slug.current`
         )
         return pathsCN.map(path => ({
             slug: decodeURIComponent(path.toString())
         }))
     }else {
         const pathsEN = [] = await client.fetch(
-            `*[_type == "newTH" && defined(slug.currenct)][].slug.current`
+            `*[_type == "newEN" && defined(slug.currenct)][].slug.current`
         )
         return pathsEN.map(path => ({
             slug: decodeURIComponent(path.toString())
@@ -70,7 +70,7 @@ async function getPosts(params) {
            
           }
     }else if(lng == "cn"){
-        const query = groq`*[_type == "newsTH" && slug.slug.current == '${slug}'][0]{
+        const query = groq`*[_type == "newsEN" && slug.slug.current == '${slug}'][0]{
             title,
             mainImage,
             body,
@@ -80,7 +80,7 @@ async function getPosts(params) {
         }`
           const posts = await client.fetch(query, slug)
       
-          const queryBlog = groq`*[_type == "newsTH" && slug.slug.current != '${slug}' && category->title == "${posts?.category}"] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsEN" && slug.slug.current != '${slug}' && category->title == "${posts?.category}"] | order(_createdAt desc){
             title,
             mainImage,
             body,
@@ -101,7 +101,7 @@ async function getPosts(params) {
            
           }
     }else {
-        const query = groq`*[_type == "newsTH" && slug.slug.current == '${slug}'][0]{
+        const query = groq`*[_type == "newsEN" && slug.slug.current == '${slug}'][0]{
             title,
             mainImage,
             body,
@@ -111,7 +111,7 @@ async function getPosts(params) {
         }`
           const posts = await client.fetch(query, slug)
       
-          const queryBlog = groq`*[_type == "newsTH" && slug.slug.current != '${slug}' && category->title == "${posts?.category}"] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsEN" && slug.slug.current != '${slug}' && category->title == "${posts?.category}"] | order(_createdAt desc){
             title,
             mainImage,
             body,
@@ -190,7 +190,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
          }
         }
     }else if(lng == "cn"){
-        const query = groq`*[_type == "newsTH" && slug.slug.current == '${slug}'][0]`
+        const query = groq`*[_type == "newsEN" && slug.slug.current == '${slug}'][0]`
          const post = await client.fetch(query, slug)
          const title = post?.seo?.titletag||""||post.title
          const description =post?.seo?.description||""||post.title
@@ -240,7 +240,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
          }
         }
     }else {
-        const query = groq`*[_type == "newsTH" && slug.slug.current == '${slug}'][0]`
+        const query = groq`*[_type == "newsEN" && slug.slug.current == '${slug}'][0]`
          const post = await client.fetch(query, slug)
          const title = post?.seo?.titletag||""||post.title
          const description =post?.seo?.description||""||post.title

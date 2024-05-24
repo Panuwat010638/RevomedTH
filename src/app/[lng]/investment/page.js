@@ -43,7 +43,7 @@ async function getPosts(params) {
         const query = groq`*[_type == "InvestmentPage" && language->title == "${lng}" ] | order(_createdAt desc)`
           const posts = await client.fetch(query)
       
-          const queryBlog = groq`*[_type == "newsCN" ] | order(_createdAt desc){
+          const queryBlog = groq`*[_type == "newsEN" ] | order(_createdAt desc){
             title,
             mainImage,
             slug,

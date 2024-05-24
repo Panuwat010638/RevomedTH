@@ -34,7 +34,7 @@ async function getPosts(params) {
         const dateB = new Date(b.date);
         return dateB - dateA;
       });
-    const queryNewsEN = groq`*[_type == "newsTH" ] | order(_createdAt desc){
+    const queryNewsEN = groq`*[_type == "newsEN" ] | order(_createdAt desc){
       title,
       detail,
       date,
@@ -48,7 +48,7 @@ async function getPosts(params) {
         const dateB = new Date(b.date);
         return dateB - dateA;
       });
-    const queryNewsCN = groq`*[_type == "newsTH" ] | order(_createdAt desc){
+    const queryNewsCN = groq`*[_type == "newsEN" ] | order(_createdAt desc){
       title,
       detail,
       date,
@@ -116,7 +116,7 @@ export default async function newspage({ params }) {
         <div className="flex w-full h-[80px]"/>
         <NewsBanner data={data[0]?.banner} locale={params.lng}/>
         <NewsHeader data={data[0]?.header} locale={params.lng}/>
-        <NewsContent locale={params.lng} news={params.lng == 'th' ? newsTH : params.lng=='en'? newsEN : newsCN} category={params.lng == 'th' ? categoryTH : params.lng=='en'? categoryTH : categoryTH}/>
+        <NewsContent locale={params.lng} news={params.lng == 'th' ? newsTH : params.lng=='en'? newsEN : newsCN} category={params.lng == 'th' ? categoryTH : params.lng=='en'? categoryEN : categoryEN}/>
     </main>
   )
 }
