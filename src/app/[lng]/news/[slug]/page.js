@@ -7,7 +7,6 @@ import NewsSlugMoreNews from "@/components/News/NewsSlug/NewsSlugMoreNews"
 
 export async function getStaticParams({ params, searchParams }, parent) {
     const lng  = decodeURIComponent(params.lng)
-   
     if(lng == "th"){
         const pathsTH = [] = await client.fetch(
         `*[_type == "newTH" && defined(slug.currenct)][].slug.current`
