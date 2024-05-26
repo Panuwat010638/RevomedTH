@@ -21,7 +21,7 @@ export default function AboutCategory({data1,data2,data3,category,locale}) {
         <div className='max-w-full mx-auto'>
             <div className='flex flex-col justify-center items-center w-full h-full '>
                 {/* Category */}
-                <div className="flex flex-col md:flex-row flex-wrap justify-center items-center w-full ss:w-[80%] sm:w-[60%] md:w-[70%] lg:w-auto xl:w-[1280px] gap-[16px] lg:gap-[24px] px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]">
+                <div className="flex flex-col md:flex-row flex-wrap justify-center items-center w-full ss:w-[80%] sm:w-[60%] md:w-full lg:w-auto xl:w-[1280px] gap-[16px] lg:gap-[24px] px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]">
                                  
                     {category?.map((item,index)=>(
                         <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center px-4 sm::px-[32px] py-[12px] 

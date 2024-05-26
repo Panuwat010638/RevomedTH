@@ -6,14 +6,14 @@ export default function CSRRoadmap({data,locale}) {
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[40px] sm:pb-[60px] xl:pb-[80px]'>
-            <div className='flex flex-col lg:flex-row justify-center items-center w-full h-full lg:h-[400px] xl:h-[380px] gap-y-[24px] gap-x-[2.5%]'>
+            <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start w-full h-full  gap-y-[24px] gap-x-[2.5%]'>
                 {/* Header */}
-                <div className='flex w-full lg:w-[15%] lg:h-full justify-center lg:justify-start border-b-[1px] lg:border-b-0 border-r-0 lg:border-r-[1px] border-solid border-[#EBABB4] pb-[24px] lg:pb-0 pr-0 lg:pr-[24px]'>
+                <div className='lg:h-[400px] flex w-full lg:w-[15%]  justify-center lg:justify-start border-b-[1px] lg:border-b-0 border-r-0 lg:border-r-[1px] border-solid border-[#EBABB4] pb-[24px] lg:pb-0 pr-0 lg:pr-[24px]'>
                     <h2 className='font-line text-[24px] xl:text-[32px] text-[#002E62] font-[700] whitespace-pre-line text-center lg:text-start'>
                         {data?.header}
                     </h2>
                 </div>
-                <ul className='flex flex-col w-[184px] lg:w-[15%] lg:h-full'>
+                <ul className='flex flex-col ss:flex-row lg:flex-col justify-start ss:justify-center lg:justify-start w-[184px] ss:w-full lg:w-[15%] lg:h-[400px]'>
                     {data?.roadmap?.map((item,index)=>(
                         <li className="flex items-center px-[10px] py-[20px]">
                             <button onClick={()=>setSelect(item?.year)} className={`flex items-center gap-x-[16px] font-line text-[16px] lg:text-[18px] font-[700] transition-all duration-500

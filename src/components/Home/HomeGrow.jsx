@@ -35,11 +35,11 @@ export default function HomeGrow({data,locale}) {
                 <div className="flex flex-col-reverse md:flex-row w-full md:justify-between md:gap-x-[10%] xl:gap-x-[15%] gap-y-[72px]">
                     {data?.data?.map((item,index)=>(
                         <div key={index} className="flex flex-row-reverse items-center md:items-start md:flex-col w-full md:w-[26.67%] xl:w-[23.3%] gap-[40px] z-[10]">
-                            <div className="flex flex-col w-[80%] md:w-full gap-y-[16px]">
+                            <div className="flex flex-col w-[80%] md:w-full gap-y-[16px] text-pretty">
                                 <h4 className="font-line text-[24px] xl:text-[36px] text-[#EBABB4] font-[700] leading-[150%] uppercase">
                                     {item?.year}
                                 </h4>
-                                <p className="text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line">
+                                <p className={`text-[16px] lg:text-[18px]  text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line ${locale== "th" ? "":"text-balance"}`}>
                                     {item?.detail}
                                 </p>
                             </div>

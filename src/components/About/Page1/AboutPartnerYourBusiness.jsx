@@ -31,7 +31,7 @@ export default function AboutPartnerYourBusiness({data,locale}) {
                             <h3 className="text-[18px] xl:text-[20px] text-[#002E62] font-[500]">
                                 {item?.title}
                             </h3>
-                            <p className="text-[16px] lg:text-[18px] text-[#0A2B40] font-[400] leading-[180%] lg:whitespace-pre-line">
+                            <p className={`text-[16px] lg:text-[18px] text-[#0A2B40] font-[400] leading-[180%] lg:whitespace-pre-line antialiased ${locale== "th" ?"":"text-balance "}`}>
                                 {item?.detail}
                             </p>
                         </div>

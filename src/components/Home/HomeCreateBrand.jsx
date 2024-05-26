@@ -27,8 +27,8 @@ export default function HomeCreateBrand({data,locale}) {
                     </h2>
                 </div>
         
-                <div className='flex flex-col md:flex-row justify-center items-center w-full sm:w-2/3  md:w-full md:h-[382px] lg:h-[382px] xl:h-[412px] gap-[8px]'>
-                    <div className='flex flex-col gap-y-[4px] w-full md:w-1/3 h-[350px] sm:h-[240px] md:h-full bg-[#FFECEE] rounded-[16px] p-4 md:p-6'>
+                <div className='flex flex-col lg:flex-row justify-center items-center w-full sm:w-2/3  lg:w-full  lg:h-[382px] xl:h-[412px] gap-[8px]'>
+                    <div className='flex flex-col gap-y-[4px] w-full lg:w-1/3 h-[350px] sm:h-[240px] lg:h-full bg-[#FFECEE] rounded-[16px] p-4 lg:p-6'>
                         <h4 className='font-line text-[28px] lg:text-[40px] text-[#EBABB4] font-[700] whitespace-pre-line'>
                             {data?.list[0]?.num}
                         </h4>
@@ -36,9 +36,9 @@ export default function HomeCreateBrand({data,locale}) {
                             {data?.list[0]?.title}
                         </h4>
                     </div>
-                    <div className='flex flex-col w-full md:w-2/3 md:h-full gap-[8px]'>
-                        <div className='flex flex-col md:flex-row w-full h-[350px] sm:h-[240px] md:h-1/2 gap-[8px]'>
-                            <div className='flex flex-col gap-y-[4px] w-full md:w-1/2 h-1/2 md:h-full bg-[#CFE9FA] rounded-[16px] p-4 md:p-6'>
+                    <div className='flex flex-col w-full lg:w-2/3 lg:h-full gap-[8px]'>
+                        <div className='flex flex-col lg:flex-row w-full h-[350px] sm:h-[240px] lg:h-1/2 gap-[8px]'>
+                            <div className='flex flex-col gap-y-[4px] w-full lg:w-1/2 h-1/2 lg:h-full bg-[#CFE9FA] rounded-[16px] p-4 lg:p-6'>
                                 <h4 className='font-line text-[28px] lg:text-[40px] text-[#3D84B0] font-[700] whitespace-pre-line '>
                                 {data?.list[1]?.num}
                                 </h4>
@@ -46,8 +46,8 @@ export default function HomeCreateBrand({data,locale}) {
                                     {data?.list[1]?.title}
                                 </h4>
                             </div>
-                            <div className='flex w-full md:w-1/2 h-1/2 md:h-full gap-[8px]'>
-                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 md:p-6'>
+                            <div className='flex w-full lg:w-1/2 h-1/2 lg:h-full gap-[8px]'>
+                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 lg:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {data?.list[2]?.num}
                                     </h4>
@@ -55,7 +55,7 @@ export default function HomeCreateBrand({data,locale}) {
                                         {data?.list[2]?.title}
                                     </h4>
                                 </div>
-                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 md:p-6'>
+                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 lg:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line '>
                                         {data?.list[3]?.num}
                                     </h4>
@@ -65,9 +65,9 @@ export default function HomeCreateBrand({data,locale}) {
                                 </div>
                             </div>
                         </div>
-                        <div className='flex flex-col md:flex-row w-full h-[350px] sm:h-[240px] md:h-1/2 gap-[8px]'>
-                            <div className='flex w-full md:w-1/2 h-1/2 md:h-full gap-[8px]'>
-                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 md:p-6'>
+                        <div className='flex flex-col lg:flex-row w-full h-[350px] sm:h-[240px] lg:h-1/2 gap-[8px]'>
+                            <div className='flex w-full lg:w-1/2 h-1/2 lg:h-full gap-[8px]'>
+                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#C7D3F6] rounded-[16px] p-4 lg:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#5E73B2] font-[700] whitespace-pre-line'>
                                         {data?.list[4]?.num}
                                     </h4>
@@ -75,7 +75,7 @@ export default function HomeCreateBrand({data,locale}) {
                                         {data?.list[4]?.title}
                                     </h4>
                                 </div>
-                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 md:p-6'>
+                                <div className='flex flex-col gap-y-[4px] w-1/2 h-full bg-[#EBABB4] rounded-[16px] p-4 lg:p-6'>
                                     <h4 className='font-line text-[28px] lg:text-[40px] text-[#fcfcfc] font-[700] whitespace-pre-line'>
                                         {data?.list[5]?.num}
                                     </h4>
@@ -84,7 +84,7 @@ export default function HomeCreateBrand({data,locale}) {
                                     </h4>
                                 </div>
                             </div>
-                            <div className='flex flex-col gap-y-[4px] w-full md:w-1/2 h-1/2 md:h-full bg-[#CFE9FA] rounded-[16px] p-4 md:p-6'>
+                            <div className='flex flex-col gap-y-[4px] w-full lg:w-1/2 h-1/2 lg:h-full bg-[#CFE9FA] rounded-[16px] p-4 lg:p-6'>
                                 <h4 className='font-line text-[28px] lg:text-[40px] text-[#3D84B0] font-[700] whitespace-pre-line'>
                                     {data?.list[6]?.num}
                                 </h4>

@@ -34,8 +34,8 @@ export default function HomeAbout({data,locale}) {
                         alt={data?.images?.alt}
                         width="100%" height="100%" quality={100}/>
                     </div>
-                    <div className="flex w-full sm:w-2/3 lg:w-3/5">
-                        <p className='font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] whitespace-pre-line'>
+                    <div className="flex w-full sm:w-2/3 lg:w-3/5 text-pretty">
+                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line ${locale== "th" ?"":"text-balance text-justify"}`}>
                             {data?.detail}
                         </p>
                     </div>

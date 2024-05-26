@@ -68,7 +68,7 @@ export default function HomeBlog({data,news,locale}) {
                 </div>
 
                 {/* Blog */}
-                <div className="hidden md:flex justify-center w-full gap-x-[2%]">
+                <div className="hidden md:flex w-full gap-x-[2%]">
                     {news?.slice(1,4).map((item,index)=>(
                         <CardBlogInHome key={index} item={item} index={index} locale={locale}/>
                     ))}
