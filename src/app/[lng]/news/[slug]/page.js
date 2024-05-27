@@ -43,6 +43,7 @@ async function getPosts(params) {
             mainImage,
             body,
             date,
+            slug,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
         }`
@@ -53,6 +54,7 @@ async function getPosts(params) {
             mainImage,
             body,
             date,
+            slug,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
         }`
@@ -73,6 +75,7 @@ async function getPosts(params) {
             title,
             mainImage,
             body,
+            slug,
             date,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
@@ -83,6 +86,7 @@ async function getPosts(params) {
             title,
             mainImage,
             body,
+            slug,
             date,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
@@ -105,6 +109,7 @@ async function getPosts(params) {
             mainImage,
             body,
             date,
+            slug,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
         }`
@@ -115,6 +120,7 @@ async function getPosts(params) {
             mainImage,
             body,
             date,
+            slug,
             'category':category->title,
             "headings": body[length(style) == 2 && string::startsWith(style, "h2")]
         }`
