@@ -35,7 +35,7 @@ export default function HomeAbout({data,locale}) {
                         width="100%" height="100%" quality={100}/>
                     </div>
                     <div className="flex w-full sm:w-2/3 lg:w-3/5 ">
-                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line ${locale== "th" ?"":"text-pretty lg:text-balance  lg:text-justify"}`}>
+                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line text-pretty lg:text-balance ${locale == 'th' ? '' : locale == 'cn' ? ' ':"lg:text-justify"}`}>
                             {data?.detail}
                         </p>
                     </div>

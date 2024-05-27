@@ -15,7 +15,7 @@ export default function AboutAb({data,locale}) {
                 
                 <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-x-[64px] gap-y-[24px]">
                     <div className="flex w-full sm:w-2/3 lg:w-3/5 text-pretty">
-                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line text-balance ${locale == 'th' ? '':'lg:text-justify'}`}>
+                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line text-balance ${locale == 'th' ? '':locale == 'cn' ? '':'lg:text-justify'}`}>
                             {data?.detail}
                         </p>
                     </div>
