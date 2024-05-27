@@ -78,7 +78,7 @@ export default function NewsContent({news,category,locale}) {
                     </button>
                     
                     {category?.map((item,index)=>(
-                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full ss:w-[280px] md:w-[320px]  lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
+                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full ss:w-[280px] md:w-[320px] lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
                         transition-all duration-500 rounded-[8px]
                         ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc]":"lg:bg-[#fcfcfc]  text-[#a7abbb] bg-[#f3f5fb] lg:hover:bg-[#f3f5fb]"}
                         font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
