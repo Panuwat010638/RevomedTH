@@ -15,7 +15,7 @@ export default function HomeRevomedWorld({data,locale}) {
                 
                 <div className="flex flex-wrap w-full gap-y-[16px] md:gap-y-[24px] gap-x-[2%]">
                     {data?.list?.slice(0,6)?.map((item,index)=>(
-                        <CardHomeRevomedWorld key={index} item={item} index={index}/>
+                        <CardHomeRevomedWorld key={index} item={item} index={index} locale={locale} />
                     ))}
                     
                 </div>

@@ -7,7 +7,7 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function CardHomeRevomedWorld({item,index}) {
+export default function CardHomeRevomedWorld({item,index,locale}) {
   return (
     <div key={index} className="flex flex-col items-center w-[49%] sm:w-[32%] lg:w-[15%] h-full gap-[16px] lg:gap-[24px]">
         <div className="flex justify-center items-center w-[80px] h-[80px]">

@@ -15,7 +15,7 @@ export default function NewsSlugMoreNews({locale,news}) {
 
                 <div className="flex flex-col md:flex-row w-full ss:w-[80%] sm:w-[60%] md:w-full gap-x-[2%] gap-y-[24px]">
                     {news?.slice(0,3)?.map((item,index)=>(
-                        <CardMoreNews key={`More News`+index} item={item} index={index}/>
+                        <CardMoreNews key={`More News`+index} item={item} index={index} locale={locale}/>
                     ))}
                 </div>
                         
