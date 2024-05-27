@@ -9,7 +9,7 @@ export default function HomeInnovation({data,locale}) {
                     {data?.header}
                 </h2>
                 <svg width="154" height="4" viewBox="0 0 154 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 2H152" stroke="#EBABB4" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M2 2H152" stroke="#EBABB4" strokeWidth="3" strokeLinecap="round"/>
                 </svg>
                 <p className='font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line text-center'>
                     {data?.detail}

@@ -51,7 +51,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
       description: post.seo?.description,
       images: ogImageUrl ? [ ogImageUrl ] : ['/th/og.png' ],
       type: 'website',
-      authors: ['C.C. AUTO PART Co., Ltd.']
+      authors: ['Revomed Group Co.,Ltd.']
     }
   }
 }

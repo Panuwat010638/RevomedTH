@@ -24,9 +24,9 @@ export default function AboutCategory({data1,data2,data3,category,locale}) {
                 <div className="flex flex-col md:flex-row flex-wrap justify-center items-center w-full ss:w-[80%] sm:w-[60%] md:w-full lg:w-auto xl:w-[1280px] gap-[16px] lg:gap-[24px] px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]">
                                  
                     {category?.map((item,index)=>(
-                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center px-4 sm::px-[32px] py-[12px] 
+                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full ss:w-[280px] lg:w-auto  px-4 sm:px-[32px] py-[12px] 
                         transition-all duration-300 rounded-[8px]
-                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc] font-[700]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb] font-[700]"}
+                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc] font-[700]":"lg:bg-[#fcfcfc]  text-[#a7abbb] bg-[#f3f5fb] lg:hover:bg-[#f3f5fb] font-[700]"}
                         font-line text-[16px] lg:text-[18px] leading-[150%]`}>
                             {item?.title}
                         </button>

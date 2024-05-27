@@ -69,18 +69,18 @@ export default function NewsContent({news,category,locale}) {
         <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]'>
             <div className='flex flex-col justify-center items-center w-full h-full gap-y-[40px] lg:gap-y-[64px]'>
                 {/* Category */}
-                <div className="flex flex-col md:flex-row flex-wrap items-center w-full ss:w-[80%] sm:w-[60%] md:w-[70%] lg:w-auto gap-[16px] lg:gap-[24px]">
-                    <button onClick={()=>setCat("ALL")} className={`flex justify-center items-center w-full lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
+                <div className="flex flex-col lg:flex-row flex-wrap items-center w-full ss:w-[80%] sm:w-[60%] md:w-[70%] lg:w-auto gap-[16px] lg:gap-[24px]">
+                    <button onClick={()=>setCat("ALL")} className={`flex justify-center items-center w-full ss:w-[280px] md:w-[320px] lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
                     transition-all duration-500 rounded-[8px]
-                    ${cat == 'ALL' ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb]"}
+                    ${cat == 'ALL' ? "bg-[#004D7D] text-[#fcfcfc]":"lg:bg-[#fcfcfc]  text-[#a7abbb] bg-[#f3f5fb] lg:hover:bg-[#f3f5fb]"}
                     font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
                         {locale== 'cn' ? "所有新闻":locale== "th"?"ข่าวสารทั้งหมด":"All News"}
                     </button>
                     
                     {category?.map((item,index)=>(
-                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
+                        <button key={index} onClick={()=>setCat(item?.title)} className={`flex justify-center items-center w-full ss:w-[280px] md:w-[320px]  lg:w-[240px] px-0 ss:px-[32px] py-[12px] 
                         transition-all duration-500 rounded-[8px]
-                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc]":"bg-[#fcfcfc] text-[#a7abbb] hover:bg-[#f3f5fb]"}
+                        ${cat == item?.title ? "bg-[#004D7D] text-[#fcfcfc]":"lg:bg-[#fcfcfc]  text-[#a7abbb] bg-[#f3f5fb] lg:hover:bg-[#f3f5fb]"}
                         font-line text-[16px] lg:text-[18px]  font-[700] leading-[150%]`}>
                             {item?.title}
                         </button>

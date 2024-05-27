@@ -15,7 +15,7 @@ export default function InvestmentHeader({data}) {
                         </p>
                     </div>
                     <svg width="153" height="4" viewBox="0 0 153 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.5 2H151.5" stroke="#EBABB4" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M1.5 2H151.5" stroke="#EBABB4" strokeWidth="3" strokeLinecap="round"/>
                     </svg>
 
                 </div>

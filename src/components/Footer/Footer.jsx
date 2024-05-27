@@ -207,7 +207,7 @@ export default function Footer({footer,lang,localeData}) {
                 {/* Bot */}
                 <div className="w-full sm:w-[80%] md:w-[60%] lg:w-full grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 lg:grid-cols-7 lg:grid-rows-none gap-[24px] lg:gap-[48px] pt-[32px] border-t-[1px] border-solid border-[#6F7489]">
                     {footer?.morelogo?.map((item,index)=>(
-                        <div className="flex justify-center items-center w-full h-[80px]">
+                        <div key={index} className="flex justify-center items-center w-full h-[80px]">
                             <Image className="object-contain object-center w-full h-full" alt={item?.alt} src={urlFor(item?.image).url()} quality={100} width={136} height={80} />
                         </div>
                     ))}

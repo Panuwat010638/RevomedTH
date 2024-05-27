@@ -9,7 +9,7 @@ export default function NewsSlugMoreNews({locale,news}) {
                 {/* Header */}
                 <div className="flex justify-center w-full items-center gap-x-[24px]">
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center'>
-                        {locale=='th'? "ข่าวสารที่เกี่ยวข้อง":locale=='cn' ? "相关新闻":"Related news"}
+                        {locale=='th'? "ข่าวสารที่เกี่ยวข้อง":locale=='cn' ? "相关新闻":"Related News"}
                     </h2>
                 </div>
 

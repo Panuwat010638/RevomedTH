@@ -17,7 +17,7 @@ export default function HomeAbout({data,locale}) {
                     {data?.header?.title1}
                     </h2>
                     <svg width="28" height="4" viewBox="0 0 28 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 2H152" stroke="#EBABB4" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M2 2H152" stroke="#EBABB4" strokeWidth="3" strokeLinecap="round"/>
                     </svg>
                     <h2 className='font-line text-[24px] lg:text-[36px] text-[#002E62] font-[700] leading-[150%] whitespace-pre-line text-center'>
                     {data?.header?.title2}
@@ -34,8 +34,8 @@ export default function HomeAbout({data,locale}) {
                         alt={data?.images?.alt}
                         width="100%" height="100%" quality={100}/>
                     </div>
-                    <div className="flex w-full sm:w-2/3 lg:w-3/5 text-pretty">
-                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line ${locale== "th" ?"":"text-balance text-justify"}`}>
+                    <div className="flex w-full sm:w-2/3 lg:w-3/5 ">
+                        <p className={`font-line text-[16px] lg:text-[18px] text-[#002E62] font-[400] leading-[180%] lg:whitespace-pre-line ${locale== "th" ?"":"text-pretty lg:text-balance  lg:text-justify"}`}>
                             {data?.detail}
                         </p>
                     </div>
