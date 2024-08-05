@@ -16,7 +16,7 @@ export default function CardHomeRevomedWorld({item,index,locale}) {
             radius="none"
             src={urlFor(item?.image).url()}
             placeholder="blur"
-            alt={item?.alt}
+            alt={item?.alt ? item?.alt :item?.title}
             width="80" height="80" quality={100}/>
         </div>
         <p className='text-[16px] xl:text-[18px] text-[#BA636F] font-[400] leading-[150%] lg:whitespace-pre-line text-center'>

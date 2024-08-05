@@ -42,7 +42,7 @@ export default function HomeBlog({data,news,locale}) {
                                 radius="none"
                                 src={urlFor(item?.mainImage?.image).url()}
                                 placeholder="blur"
-                                alt={item?.mainImage?.alt}
+                                alt={item?.mainImage?.alt ? item?.mainImage?.alt :item?.title}
                                 width="100%" height="100%" quality={100}/>
                             </div>
 

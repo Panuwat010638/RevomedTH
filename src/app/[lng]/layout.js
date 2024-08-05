@@ -71,13 +71,13 @@ export async function generateMetadata({ params, searchParams }, parent) {
     title: 'Revomed Group Co.,Ltd.' ,
     description: 'Revomed Group Co.,Ltd.',
     keywords:'Revomed Group Co.,Ltd.',
-    metadataBase: new URL(`https://www.revomedgroup.com/${lng}`),
+    metadataBase: new URL(`https://www.revomedgroup.com/`),
     alternates: {
       canonical: '/',
       languages: {
-        'en': '/en',
-        'th': '/th',
-        'cn': '/cn'
+        'en': 'https://www.revomedgroup.com/en',
+        'th': 'https://www.revomedgroup.com/th',
+        'cn': 'https://www.revomedgroup.com/cn'
       },
     },
     robots: {

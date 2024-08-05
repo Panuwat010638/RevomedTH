@@ -102,11 +102,11 @@ async function getPosts(params) {
       description: post.seo?.description,
       keywords: post.seo?.keywords,
       alternates: {
-        canonical: `/investment`,
+        canonical: `/${lng}/investment`,
         languages: {
-          'en': '/en',
-          'th': '/th',
-          'cn': '/cn'
+          'en': '/en/investment',
+          'th': '/th/investment',
+          'cn': '/cn/investment'
         },
       },
       openGraph: {

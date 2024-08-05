@@ -18,7 +18,7 @@ export default function CardShareHolder({item,index,locale}) {
             radius="none"
             src={urlFor(item?.images?.image).url()}
             placeholder="blur"
-            alt={item?.images?.alt}
+            alt={item?.images?.alt ? item?.images?.alt :item?.nameTH}
             width="100%" height="100%" quality={100}/>
         </div>
         {/* Text */}

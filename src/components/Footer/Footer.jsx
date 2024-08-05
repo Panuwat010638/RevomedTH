@@ -63,6 +63,14 @@ export default function Footer({footer,lang,localeData}) {
             ]},
         ]
     }
+    const handleClick = (e, link) => {
+        if (link === '#') {
+          e.preventDefault();
+          // ทำการจัดการเมื่อคลิกลิงก์ที่ไม่มีปลายทาง เช่น เปิด modal หรือ scroll ไปยังส่วนบนของหน้า
+          console.log('Clicked on a placeholder link');
+          // ตัวอย่าง: window.scrollTo(0, 0);
+        }
+      };
   return (
     <footer className='bg-[#002E62]'>
         <div className="max-w-7xl mx-auto px-6 xl:px-4 py-[40px]">
@@ -151,9 +159,23 @@ export default function Footer({footer,lang,localeData}) {
                                 <ul className="flex flex-col gap-y-[16px] w-full">
                                 {footer?.partner[0]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
-                                        <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
-                                          {item?.name}
-                                        </a>
+                                        {item?.link && item.link !== '#' ? (
+                                          <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </a>
+                                        ) : (
+                                          <span
+                                            onClick={(e) => handleClick(e, item?.link)}
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </span>
+                                        )}
                                     </li>
                                 ))}
                                 </ul>
@@ -166,9 +188,23 @@ export default function Footer({footer,lang,localeData}) {
                                 <ul className="flex flex-col gap-y-[16px] w-full">
                                 {footer?.partner[1]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
-                                        <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
-                                          {item?.name}
-                                        </a>
+                                        {item?.link && item.link !== '#' ? (
+                                          <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </a>
+                                        ) : (
+                                          <span
+                                            onClick={(e) => handleClick(e, item?.link)}
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </span>
+                                        )}
                                     </li>
                                 ))}
                                 </ul>
@@ -181,9 +217,23 @@ export default function Footer({footer,lang,localeData}) {
                                 <ul className="flex flex-col gap-y-[16px] w-full">
                                 {footer?.partner[2]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
-                                        <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
-                                          {item?.name}
-                                        </a>
+                                        {item?.link && item.link !== '#' ? (
+                                          <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </a>
+                                        ) : (
+                                          <span
+                                            onClick={(e) => handleClick(e, item?.link)}
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </span>
+                                        )}
                                     </li>
                                 ))}
                                 </ul>
@@ -193,9 +243,24 @@ export default function Footer({footer,lang,localeData}) {
                                 <ul className="flex flex-col gap-y-[16px] w-full">
                                 {footer?.partner[3]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
-                                        <a  href={item?.link} target="_blank" className={`text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer`}>
-                                          {item?.name}
-                                        </a>
+                                        {item?.link && item.link !== '#' ? (
+                                          <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </a>
+                                        ) : (
+                                          <span
+                                            onClick={(e) => handleClick(e, item?.link)}
+                                            className="text-[16px] text-[#E0E3EB] font-[400] leading-[180%] cursor-pointer"
+                                          >
+                                            {item?.name}
+                                          </span>
+                                        )}
+                                        
                                     </li>
                                 ))}
                                 </ul>

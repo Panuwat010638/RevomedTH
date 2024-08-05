@@ -228,11 +228,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
            description: description,
            keywords:keywords,
            alternates: {
-            canonical: `/news/${post.slug.slug.current}`,
+            canonical: `/${lng}/news/${post.slug.slug.current}`,
             languages: {
-              'en': '/en',
-              'th': '/th',
-              'cn': '/cn'
+              'en': `/en/news/${post.slug.slug.current}`,
+              'th': `/th/news/${post.slug.slug.current}`,
+              'cn': `/cn/news/${post.slug.slug.current}`
             },
           },
           openGraph: {
@@ -257,11 +257,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
            description: post.title,
            keywords:post.title,
            alternates: {
-            canonical: `/news/${post.slug.slug.current}`,
+            canonical: `/${lng}/news/${post.slug.slug.current}`,
             languages: {
-              'en': '/en',
-              'th': '/th',
-              'cn': '/cn'
+              'en': `/en/news/${post.slug.slug.current}`,
+              'th': `/th/news/${post.slug.slug.current}`,
+              'cn': `/cn/news/${post.slug.slug.current}`
             },
           },
           openGraph: {
@@ -278,11 +278,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
            description: description,
            keywords:keywords,
            alternates: {
-            canonical: `/news/${post.slug.slug.current}`,
+            canonical: `/${lng}/news/${post.slug.slug.current}`,
             languages: {
-              'en': '/en',
-              'th': '/th',
-              'cn': '/cn'
+              'en': `/en/news/${post.slug.slug.current}`,
+              'th': `/th/news/${post.slug.slug.current}`,
+              'cn': `/cn/news/${post.slug.slug.current}`
             },
           },
           openGraph: {

@@ -36,11 +36,11 @@ async function getPosts(params) {
       description: post.seo?.description,
       keywords: post.seo?.keywords,
       alternates: {
-        canonical: `/contact`,
+        canonical: `/${lng}/contact`,
         languages: {
-          'en': '/en',
-          'th': '/th',
-          'cn': '/cn'
+          'en': '/en/contact',
+          'th': '/th/contact',
+          'cn': '/cn/contact'
         },
       },
       openGraph: {

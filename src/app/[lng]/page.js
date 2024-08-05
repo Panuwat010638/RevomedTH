@@ -109,11 +109,11 @@ export async function generateMetadata({ params, searchParams }, parent) {
     description: post.seo?.description,
     keywords: post.seo?.keywords,
     alternates: {
-      canonical: `/`,
+      canonical: `/${lng}`,
       languages: {
-        'en': '/en',
-        'th': '/th',
-        'cn': '/cn'
+        'en': 'https://www.revomedgroup.com/en',
+        'th': 'https://www.revomedgroup.com/th',
+        'cn': 'https://www.revomedgroup.com/cn'
       },
     },
     openGraph: {
