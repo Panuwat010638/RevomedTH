@@ -115,14 +115,7 @@ export default async function RootLayout({ children,params: { lng } }) {
     <html lang={lng} dir={dir(lng)} className={iBM_Plex_Sans_Thai.className}>
       <body>
       <GA data={gtag?.title}/>
-      <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            src={`https://www.facebook.com/tr?id=${facebook?.title}&ev=PageView&noscript=1`}
-          />
-        </noscript>
+      
        <Navbar navbar={navbar[0]} lang={lng} localeData={locale}/>
         {children}
         <Footer footer={footer[0]} lang={lng} localeData={locale}/>
