@@ -73,12 +73,8 @@ export async function generateMetadata({ params, searchParams }, parent) {
     keywords:'Revomed Group Co.,Ltd.',
     metadataBase: new URL(`https://www.revomedgroup.com/`),
     alternates: {
-      canonical: '/',
-      languages: {
-        'en': 'https://www.revomedgroup.com/en',
-        'th': 'https://www.revomedgroup.com/th',
-        'cn': 'https://www.revomedgroup.com/cn'
-      },
+      canonical: `/${lng}`,
+    
     },
     robots: {
       index: true,
@@ -113,6 +109,7 @@ export default async function RootLayout({ children,params: { lng } }) {
   const facebook = posts.props.facebook;
   return (
     <html lang={lng} dir={dir(lng)} className={iBM_Plex_Sans_Thai.className}>
+
       <body>
       <GA data={gtag?.title}/>
       
