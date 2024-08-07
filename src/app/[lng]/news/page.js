@@ -112,11 +112,10 @@ export default async function newspage({ params }) {
     const categoryCN = posts.props.NewscategoryCN;
   return (
     <main>
-  
         <div className="flex w-full h-[80px]"/>
         <NewsBanner data={data[0]?.banner} locale={params.lng}/>
         <NewsHeader data={data[0]?.header} locale={params.lng}/>
-        <NewsContent locale={params.lng} news={params.lng == 'th' ? newsTH : params.lng=='en'? newsEN : newsCN} category={params.lng == 'th' ? categoryTH : params.lng=='en'? categoryEN : categoryEN}/>
+        <NewsContent locale={params.lng} news={params.lng == 'th' ? newsTH : params.lng=='cn'? newsCN : newsEN} category={params.lng == 'th' ? categoryTH : params.lng=='cn'? categoryCN : categoryEN}/>
     </main>
   )
 }
