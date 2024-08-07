@@ -57,7 +57,7 @@ export default function HomeBanner({data, localea}) {
           </div>
           {/* Button */}
           <div className="flex justify-end items-end w-full h-full absolute top-0 z-[10]">
-            <div className="sticky bottom-[0px] right-[24px] inline-block pb-[24px]">
+            <div className="sticky  bottom-[0px] right-[12px] sm:right-[24px] inline-block pb-[12px] sm:pb-[24px]">
               <input
                 type="checkbox"
                 id="checkboxInput"
