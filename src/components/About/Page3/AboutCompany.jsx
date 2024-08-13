@@ -72,7 +72,7 @@ export default function AboutCompany({data,locale}) {
                             <h2 className='text-[18px] lg:text-[20px] font-[700] text-[#002E62]'>
                                 {data?.Vision?.title}
                             </h2>
-                            <p className="text-[16px] lg:w-[65%] lg:text-[18px] text-[#0A2B40] font-[400] leading-[180%] lg:whitespace-pre-line">
+                            <p className="text-[16px] lg:text-[18px] text-[#0A2B40] font-[400] leading-[180%] lg:whitespace-pre-line">
                                 {data?.Vision?.text}
                             </p>
                         </div>
