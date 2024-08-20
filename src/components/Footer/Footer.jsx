@@ -71,6 +71,27 @@ export default function Footer({footer,lang,localeData}) {
           // ตัวอย่าง: window.scrollTo(0, 0);
         }
       };
+      const filter = (data) => {
+        return {
+          ...data,
+          partner: data.partner.map(continent => ({
+            ...continent,
+            list: continent.list.map(item => {
+              if (item.link && !item.link.startsWith('https://') && !item.link.startsWith('http://') && item.link !== '#') {
+                return {
+                  ...item,
+                  link: 'https://' + item.link.replace(/^www\./, '')
+                };
+              }
+              return item;
+            })
+          }))
+        };
+      };
+      
+  
+      const fixedData = filter(footer);
+
   return (
     <footer className='bg-[#002E62]'>
         <div className="max-w-7xl mx-auto px-6 xl:px-4 pb-[40px] pt-[40px] lg:pt-[64px]">
@@ -149,10 +170,10 @@ export default function Footer({footer,lang,localeData}) {
                             {/* 1 */}
                             <div className="flex flex-col gap-y-[8px] w-full">
                                 <h4 className="text-[16px] text-[#E0E3EB] font-[600]">
-                                    {footer?.partner[0]?.title}
+                                    {fixedData?.partner[0]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[8px] w-full">
-                                {footer?.partner[0]?.list?.map((item,index)=>(
+                                {fixedData?.partner[0]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         {item?.link && item.link !== '#' ? (
                                           <a
@@ -178,10 +199,10 @@ export default function Footer({footer,lang,localeData}) {
                             {/* 2 */}
                             <div className="flex flex-col gap-y-[8px] w-full">
                                 <h4 className="text-[16px] text-[#E0E3EB] font-[600]">
-                                    {footer?.partner[1]?.title}
+                                    {fixedData?.partner[1]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[8px] w-full">
-                                {footer?.partner[1]?.list?.map((item,index)=>(
+                                {fixedData?.partner[1]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         {item?.link && item.link !== '#' ? (
                                           <a
@@ -207,10 +228,10 @@ export default function Footer({footer,lang,localeData}) {
                             {/* 3 */}
                             <div className="flex flex-col gap-y-[8px] w-full">
                                 <h4 className="text-[16px] text-[#E0E3EB] font-[600]">
-                                    {footer?.partner[2]?.title}
+                                    {fixedData?.partner[2]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[8px] w-full">
-                                {footer?.partner[2]?.list?.map((item,index)=>(
+                                {fixedData?.partner[2]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         {item?.link && item.link !== '#' ? (
                                           <a
@@ -233,10 +254,10 @@ export default function Footer({footer,lang,localeData}) {
                                 ))}
                                 </ul>
                                 <h4 className="text-[16px] text-[#E0E3EB] font-[600]">
-                                    {footer?.partner[3]?.title}
+                                    {fixedData?.partner[3]?.title}
                                 </h4>
                                 <ul className="flex flex-col gap-y-[8px] w-full">
-                                {footer?.partner[3]?.list?.map((item,index)=>(
+                                {fixedData?.partner[3]?.list?.map((item,index)=>(
                                     <li key={index} className={`flex items-center w-full`}>
                                         {item?.link && item.link !== '#' ? (
                                           <a
