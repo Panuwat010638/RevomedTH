@@ -10,10 +10,29 @@ function urlFor(source) {
 export default function AboutPartner({data,locale}) {
     const handleClick = (e, link) => {
         e.preventDefault();
-        // ทำการจัดการเมื่อคลิกลิงก์ที่ไม่มีปลายทาง
         console.log('Clicked on a placeholder link');
-        // ตัวอย่าง: window.scrollTo(0, 0);
+
       };
+      const filter = (data) => {
+        return {
+          ...data,
+          partner: data.partner.map(continent => ({
+            ...continent,
+            list: continent.list.map(item => {
+              if (item.link && !item.link.startsWith('https://') && !item.link.startsWith('http://') && item.link !== '#') {
+                return {
+                  ...item,
+                  link: 'https://' + item.link.replace(/^www\./, '')
+                };
+              }
+              return item;
+            })
+          }))
+        };
+      };
+      
+  
+      const fixedData = filter(data);
   return (
     <section className='bg-[#fcfcfc]'>
         <div className='max-w-7xl mx-auto px-6 xl:px-4 pb-[48px] sm:pb-[60px] xl:pb-[80px]'>
@@ -54,7 +73,7 @@ export default function AboutPartner({data,locale}) {
 
                 {/* Coutry */}
                 <div className="flex flex-wrap gap-y-[40px] gap-x-[3%] md:gap-y-[56px] w-full sm:w-[80%] md:w-2/3 lg:w-full">
-                    {data?.partner?.map((item,index)=>(
+                    {fixedData?.partner?.map((item,index)=>(
                         <div key={index} className="flex flex-col w-[48.5%] lg:w-[22.75%] h-full gap-y-[16px] lg:gap-y-[24px]">
                             <h3 className='font-line text-[18px] lg:text-[24px] text-[#0A2B40] font-[700] leading-[150%]'>
                                 {item?.title}
